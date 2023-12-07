@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class CameraFPS : MonoBehaviour
+    
 {
 
     public float sensX;
@@ -18,6 +19,7 @@ public class CameraFPS : MonoBehaviour
     {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+
     }
 
     
@@ -36,5 +38,6 @@ public class CameraFPS : MonoBehaviour
 
         transform.rotation = Quaternion.Euler(xRotation, yRotation, 0);
         orientation.rotation =Quaternion.Euler(0, yRotation, 0);
+
     }
 }

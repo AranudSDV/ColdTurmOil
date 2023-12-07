@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+
+    Camera cam;
+
     [Header("Movement")]
     private float moveSpeed;
     public float walkSpeed;
@@ -42,6 +45,8 @@ public class PlayerController : MonoBehaviour
 
     Rigidbody rb;
 
+    
+
     public MovementState state;
 
     public enum MovementState
@@ -52,18 +57,23 @@ public class PlayerController : MonoBehaviour
         air
     }
 
-    private void Start()
+    void Start()
     {
+        cam = Camera.main;
         rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true;
         readyToJump = true;
 
         stratYscale = transform.localScale.y;
 
+
     }
 
     private void Update()
     {
+
+        
+
         //GROUND CHECK
         grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.2f, whatIsGround);
         Debug.DrawLine(transform.position, transform.position + Vector3.down * 1.4f, Color.red);
@@ -77,6 +87,19 @@ public class PlayerController : MonoBehaviour
             rb.drag = groundDrag;
         else
             rb.drag = 0;
+
+       if (Input.GetMouseButtonDown(0))
+        {
+            Ray ray = cam.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
+
+            if (Physics.Raycast(ray, out hit, 100))
+            {
+                Interactable interactable = hit.collider.GetComponent<Interactable>();
+            }
+        }
+        
+       
     }
 
     private void FixedUpdate()
@@ -185,4 +208,6 @@ public class PlayerController : MonoBehaviour
     {
         readyToJump = true;
     }
+    
+    
 }
