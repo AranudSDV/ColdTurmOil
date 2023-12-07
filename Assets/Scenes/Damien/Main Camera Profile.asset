@@ -18,7 +18,7 @@ MonoBehaviour:
     m_Value: 1
   amount:
     m_OverrideState: 1
-    m_Value: 0.229
+    m_Value: 0.283
   shader: {fileID: 4800000, guid: 2270ba0b69c63bc459598cad50f09a1d, type: 3}
 --- !u!114 &-4587285662911640138
 MonoBehaviour:
@@ -75,7 +75,7 @@ MonoBehaviour:
   active: 1
   amount:
     m_OverrideState: 1
-    m_Value: 0.5
+    m_Value: 0.643
   resolution:
     m_OverrideState: 1
     m_Value: 240
@@ -104,10 +104,10 @@ MonoBehaviour:
   active: 1
   intensity:
     m_OverrideState: 1
-    m_Value: 0.112
+    m_Value: 0.113
   amount:
     m_OverrideState: 1
-    m_Value: 554
+    m_Value: 798
   speed:
     m_OverrideState: 1
     m_Value: 0
