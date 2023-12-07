@@ -92068,6 +92068,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ede8d59f624ad042a6cea6d3eeb7d7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cam: {fileID: 223229664}
   walkSpeed: 8
   sprintSpeed: 14
   groundDrag: 6
