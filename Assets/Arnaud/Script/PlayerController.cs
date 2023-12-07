@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    [SerializeField] private LayerMask LayerMask;
+    [SerializeField] private Camera cam;
+    public ItemPickup itempickup;
 
-    public Camera cam;
 
     [Header("Movement")]
     private float moveSpeed;
@@ -59,7 +61,7 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
-        cam = Camera.main;
+        //cam = Camera.main;
         rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true;
         readyToJump = true;
@@ -93,9 +95,11 @@ public class PlayerController : MonoBehaviour
             Ray ray = cam.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
 
-            if (Physics.Raycast(ray, out hit, 100))
+            if (Physics.Raycast(ray, out hit, 1, LayerMask))
             {
-                Interactable interactable = hit.collider.GetComponent<Interactable>();
+                //ItemPickup itempickup = hit.collider.GetComponent<ItemPickup>();
+                itempickup.PickUp();
+
             }
         }
         

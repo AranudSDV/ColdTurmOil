@@ -2,20 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ItemPickup : Interactable
+public class ItemPickup : MonoBehaviour
 {
+
 
     public Item item;
 
-    public override void Interact()
-    {
-        base.Interact();
 
-        PickUp();
-
-    }
-
-   void PickUp()
+   public void PickUp()
    {
     
     Debug.Log ("picking up " + item.name);
