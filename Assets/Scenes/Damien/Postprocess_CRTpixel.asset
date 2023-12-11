@@ -18,7 +18,7 @@ MonoBehaviour:
     m_Value: 1
   amount:
     m_OverrideState: 1
-    m_Value: 0.283
+    m_Value: 0.162
   shader: {fileID: 4800000, guid: 2270ba0b69c63bc459598cad50f09a1d, type: 3}
 --- !u!114 &-4587285662911640138
 MonoBehaviour:
