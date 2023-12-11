@@ -75,7 +75,7 @@ MonoBehaviour:
   active: 1
   amount:
     m_OverrideState: 1
-    m_Value: 0.7
+    m_Value: 0.45
   resolution:
     m_OverrideState: 1
     m_Value: 240
