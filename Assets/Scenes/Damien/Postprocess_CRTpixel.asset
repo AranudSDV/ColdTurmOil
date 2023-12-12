@@ -72,7 +72,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9dfc0ecd934e74246bcf9791abe617b0, type: 3}
   m_Name: Pixelize
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   amount:
     m_OverrideState: 1
     m_Value: 0.45
@@ -104,7 +104,7 @@ MonoBehaviour:
   active: 1
   intensity:
     m_OverrideState: 1
-    m_Value: 0.113
+    m_Value: 0.159
   amount:
     m_OverrideState: 1
     m_Value: 798
