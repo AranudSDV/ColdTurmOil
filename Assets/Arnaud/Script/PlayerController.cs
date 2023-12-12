@@ -37,6 +37,8 @@ public class PlayerController : MonoBehaviour
     public float playerHeight;
     public LayerMask whatIsGround;
     bool grounded;
+    bool onWall;
+
 
     public Transform orientation;
 
@@ -68,6 +70,8 @@ public class PlayerController : MonoBehaviour
 
         stratYscale = transform.localScale.y;
 
+        
+
 
     }
 
@@ -80,9 +84,17 @@ public class PlayerController : MonoBehaviour
         grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.2f, whatIsGround);
         Debug.DrawLine(transform.position, transform.position + Vector3.down * 1.4f, Color.red);
 
+        
+    
         MyInput();
         SpeedControl();
         StateHandler();
+
+       /* if (grounded && onWall)
+        {
+            rb.AddForce(transform.down * 10, ForceMode.Impulse);
+        }
+        */
 
         //HANDLE DRAG
         if (grounded)
@@ -101,8 +113,11 @@ public class PlayerController : MonoBehaviour
                 itempickup.PickUp();
 
             }
+        
         }
         
+
+      
        
     }
 
