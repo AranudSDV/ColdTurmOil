@@ -90,11 +90,7 @@ public class PlayerController : MonoBehaviour
         SpeedControl();
         StateHandler();
 
-       /* if (grounded && onWall)
-        {
-            rb.AddForce(transform.down * 10, ForceMode.Impulse);
-        }
-        */
+       
 
         //HANDLE DRAG
         if (grounded)
@@ -107,7 +103,7 @@ public class PlayerController : MonoBehaviour
             Ray ray = cam.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
 
-            if (Physics.Raycast(ray, out hit, 1, LayerMask))
+            if (Physics.Raycast(ray, out hit, 5, LayerMask))
             {
                 //ItemPickup itempickup = hit.collider.GetComponent<ItemPickup>();
                 itempickup.PickUp();
