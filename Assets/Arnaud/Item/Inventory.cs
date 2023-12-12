@@ -32,4 +32,13 @@ public class Inventory : MonoBehaviour
     {
         items.Remove(item);
     }
+
+    public bool HasObject(string objectName)
+    {
+        for(int i = 0; i < items.Count; i++)
+        {
+            if(items[i].name == objectName) return true;
+        }
+        return false;
+    }
 }

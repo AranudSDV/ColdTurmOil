@@ -42,6 +42,11 @@ public class Moving_plateform_oneway : MonoBehaviour
 
     void OnMouseDown() //En cliquant avec la souris sur l'objet
     {
-        plateformIsMoving = true; //la plateforme se deplace
+
+        if(Inventory.instance.HasObject("Blue Card") == true)
+        {
+            plateformIsMoving = true; //la plateforme se deplace
+            Debug.Log("j'ai la blue card sur moi");
+        }
     }
 }
