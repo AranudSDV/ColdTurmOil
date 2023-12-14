@@ -2,8 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
-public class Moving_plateform_oneway : MonoBehaviour
+public class Door : MonoBehaviour
 {
     public GameObject plateform;
     public GameObject newPos;
