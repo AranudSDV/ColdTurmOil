@@ -7,7 +7,9 @@ public class PlayerMovement : MonoBehaviour
 
     public CharacterController controller;
 
-    public float speed = 12f;
+    public float speed = 7f;
+    public float sprintSpeed = 10f;
+    public float crouchSpeed = 4f;
     public float gravity = -9.81f;
     public float jumpHeight = 3f;
     
@@ -74,6 +76,7 @@ public class PlayerMovement : MonoBehaviour
         if(Input.GetKey(KeyCode.LeftControl))
         {
             isCrouching = true;
+            controller.Move(move * crouchSpeed * Time.deltaTime);
             Vector3 scale = gameObject.GetComponent<Collider>().transform.localScale;
             scale.y *= 0.5f;
             gameObject.GetComponent<Collider>().transform.localScale = scale;
@@ -89,6 +92,11 @@ public class PlayerMovement : MonoBehaviour
             itempickup.PickUp();
 
             
+        }
+
+        if(Input.GetKey(KeyCode.LeftShift))
+        {
+            controller.Move(move * sprintSpeed * Time.deltaTime);
         }
 
     }

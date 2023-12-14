@@ -87825,6 +87825,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2832776039708653675, guid: 3c253e4a79dbf1d49824c31ba664ab2b,
         type: 3}
+      propertyPath: crouchSpeed
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2832776039708653675, guid: 3c253e4a79dbf1d49824c31ba664ab2b,
+        type: 3}
+      propertyPath: sprintSpeed
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 2832776039708653675, guid: 3c253e4a79dbf1d49824c31ba664ab2b,
+        type: 3}
       propertyPath: itemMask.m_Bits
       value: 128
       objectReference: {fileID: 0}
