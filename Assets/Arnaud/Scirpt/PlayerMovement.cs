@@ -39,6 +39,9 @@ public class PlayerMovement : MonoBehaviour
    
     void Update()
     {
+
+       
+
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
 
         if(isGrounded && velocity.y < 0)
