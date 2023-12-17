@@ -6,6 +6,7 @@ public class SwitchSnow : MonoBehaviour
 {
     public GameObject FX_SnowFall;
     public GameObject FX_Blizzard;
+    public GameObject Fusible;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,6 +17,11 @@ public class SwitchSnow : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-    }
+     if (Fusible != null)
+     {
+        FX_Blizzard.SetActive(true);
+        FX_SnowFall.SetActive(false);
+     }
+
+     }
 }
