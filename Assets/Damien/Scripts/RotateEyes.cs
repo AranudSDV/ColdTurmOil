@@ -13,6 +13,6 @@ public class RotateEyes : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        object.Transform.LookAt(player.transform.position)
+        //object.Transform.LookAt(player.transform.position);
     }
 }
