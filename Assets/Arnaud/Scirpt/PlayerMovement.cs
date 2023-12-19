@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -13,21 +14,27 @@ public class PlayerMovement : MonoBehaviour
     public float gravity = -9.81f;
     public float jumpHeight = 3f;
     
-    public float itemRange = 3f;
-    public Transform itemCheck;
-    public LayerMask itemMask;
+    
+    
     public ItemPickup itempickup;
+    public LayerMask itemMask;
+    public LayerMask codeMask;
+
     
 
     public Transform groundCheck;
     public float groundDistance =0.4f;
     public LayerMask groundMask;
+    public GameObject camera;
+    public float rangePickUp;
 
     bool isGrounded;
     bool isCrouching;
     bool itemInrange;
 
     Vector3 velocity;
+
+    public TextMeshProUGUI textPickup;
 
 
     
@@ -85,14 +92,36 @@ public class PlayerMovement : MonoBehaviour
             gameObject.GetComponent<Collider>().transform.localScale = scale;
         }
 
-        itemInrange = Physics.CheckSphere(itemCheck.position, itemRange, itemMask);
+        RaycastHit hit;
+        
 
-        if (Input.GetMouseButtonDown(0) && itemInrange)
+        if (Physics.Raycast(camera.transform.position, camera.transform.TransformDirection(Vector3.forward), out hit, rangePickUp, itemMask))
         {
 
+            //itempickup.PickUp();
+            if(Input.GetMouseButtonDown(0))
+            {
+                hit.transform.GetComponent<ItemPickup>().PickUp();
+            }
+            
+            textPickup.text = "Ramassez " + hit.transform.name;
 
-            //ItemPickup itempickup = hit.collider.GetComponent<ItemPickup>();
-            itempickup.PickUp();
+        }
+
+        else
+        {
+            textPickup.text = "";
+        }
+
+         if (Physics.Raycast(camera.transform.position, camera.transform.TransformDirection(Vector3.forward), out hit, rangePickUp, codeMask))
+        {
+
+            //itempickup.PickUp();
+            if(Input.GetMouseButtonDown(0))
+            {
+                hit.transform.GetComponent<Keypad>().CheckHitObj();
+            }
+            
 
             
         }

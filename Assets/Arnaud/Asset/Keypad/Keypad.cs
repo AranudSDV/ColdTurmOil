@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class Keypad : MonoBehaviour
 {
+    public string value;
 
-    CodeLock codeLock;
+    public CodeLock codeLock;
 
     int reachRange = 100;
     
@@ -14,27 +15,19 @@ public class Keypad : MonoBehaviour
     
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
-        {
-            CheckHitObj();
-        }
+
     }
 
-    void CheckHitObj()
+    public void CheckHitObj()
     {
-        RaycastHit hit;
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        
 
-        if(Physics.Raycast(ray, out hit, reachRange))
+        if(codeLock != null)
         {
-            codeLock = hit.transform.gameObject.GetComponentInParent<CodeLock>();
-
-            if(codeLock != null)
-            {
-                string value = hit.transform.name;
-                codeLock.SetValue(value);
-            }
-
+            
+            codeLock.SetValue(name);
         }
+
+        
     }
 }
