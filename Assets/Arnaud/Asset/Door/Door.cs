@@ -6,7 +6,7 @@ public class Door : MonoBehaviour
 {
     public GameObject plateform;
     public GameObject newPos;
-    private bool plateformIsMoving = false;
+    public bool plateformIsMoving = false;
     [SerializeField] private float speedUp = 5f;
     private float diffX;
     private float diffY;
@@ -39,6 +39,7 @@ public class Door : MonoBehaviour
         }
     }
 
+    /*
     void OnMouseDown() //En cliquant avec la souris sur l'objet
     {
 
@@ -48,4 +49,5 @@ public class Door : MonoBehaviour
             Debug.Log("j'ai la blue card sur moi");
         }
     }
+    */
 }

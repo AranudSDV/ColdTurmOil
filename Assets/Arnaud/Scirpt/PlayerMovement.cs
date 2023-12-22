@@ -19,13 +19,14 @@ public class PlayerMovement : MonoBehaviour
     public ItemPickup itempickup;
     public LayerMask itemMask;
     public LayerMask codeMask;
+    public LayerMask LecteurMask;
 
     
 
     public Transform groundCheck;
     public float groundDistance =0.4f;
     public LayerMask groundMask;
-    public GameObject camera;
+    public GameObject icamera;
     public float rangePickUp;
 
     bool isGrounded;
@@ -36,7 +37,7 @@ public class PlayerMovement : MonoBehaviour
 
     public TextMeshProUGUI textPickup;
 
-
+    private Door door;
     
     void Start()
     {
@@ -95,7 +96,7 @@ public class PlayerMovement : MonoBehaviour
         RaycastHit hit;
         
 
-        if (Physics.Raycast(camera.transform.position, camera.transform.TransformDirection(Vector3.forward), out hit, rangePickUp, itemMask))
+        if (Physics.Raycast(icamera.transform.position, icamera.transform.TransformDirection(Vector3.forward), out hit, rangePickUp, itemMask))
         {
 
             //itempickup.PickUp();
@@ -113,7 +114,7 @@ public class PlayerMovement : MonoBehaviour
             textPickup.text = "";
         }
 
-         if (Physics.Raycast(camera.transform.position, camera.transform.TransformDirection(Vector3.forward), out hit, rangePickUp, codeMask))
+        if (Physics.Raycast(icamera.transform.position, icamera.transform.TransformDirection(Vector3.forward), out hit, rangePickUp, codeMask))
         {
 
             //itempickup.PickUp();
@@ -125,6 +126,19 @@ public class PlayerMovement : MonoBehaviour
 
             
         }
+
+        
+        if (Physics.Raycast(icamera.transform.position, icamera.transform.TransformDirection(Vector3.forward), out hit, rangePickUp, LecteurMask))
+        {
+            
+            if(Inventory.instance.HasObject("Blue Card") == true && Input.GetMouseButtonDown(0))
+            {
+                hit.transform.GetComponent<Door>().plateformIsMoving = true;
+                //door.plateformIsMoving = true; //la plateforme se deplace
+                Debug.Log("scitp porte marche");
+            }
+        }
+        
 
         if(Input.GetKey(KeyCode.LeftShift))
         {

@@ -7,11 +7,6 @@ public class Keypad : MonoBehaviour
     public string value;
 
     public CodeLock codeLock;
-
-    int reachRange = 100;
-    
-    
-
     
     void Update()
     {
