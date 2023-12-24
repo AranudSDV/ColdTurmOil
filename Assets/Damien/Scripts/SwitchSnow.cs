@@ -10,8 +10,8 @@ public class SwitchSnow : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        FX_SnowFall.SetActive(false);
-       FX_Blizzard.SetActive(true);
+        FX_SnowFall.SetActive(true);
+       FX_Blizzard.SetActive(false);
     }
 
     // Update is called once per frame
