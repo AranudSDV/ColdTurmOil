@@ -11,7 +11,6 @@ public class PorteForage : MonoBehaviour
     public bool plateformIsMoving = false;
     public bool plateform2IsMoving = false;
     public bool rayHit2 = false;
-    public bool rayHit = false;
     [SerializeField] private float speedUp = 5f;
     private float diffX;
     private float diffY;
@@ -50,7 +49,7 @@ public class PorteForage : MonoBehaviour
         }
 
         }
-
+        
 
 
 
@@ -59,13 +58,13 @@ public class PorteForage : MonoBehaviour
         {
 
         {
-            plateform2.transform.position = Vector3.MoveTowards(plateform2.transform.position, newPos.transform.position, speedUp * Time.deltaTime); 
+            plateform2.transform.position = Vector3.MoveTowards(plateform2.transform.position, newPos2.transform.position, speedUp * Time.deltaTime); 
         }
 
         
-        float diffX2 = plateform2.transform.position.x - newPos.transform.position.x; 
-        float diffY2 = plateform2.transform.position.y - newPos.transform.position.y; 
-        float diffZ2 = plateform2.transform.position.z - newPos.transform.position.z; 
+        float diffX2 = plateform2.transform.position.x - newPos2.transform.position.x; 
+        float diffY2 = plateform2.transform.position.y - newPos2.transform.position.y; 
+        float diffZ2 = plateform2.transform.position.z - newPos2.transform.position.z; 
         float diff2 = diffX2 + diffY2 + diffZ2; 
         if(diff2 == 0)
         {
@@ -78,7 +77,7 @@ public class PorteForage : MonoBehaviour
         
         }
 
-        if(Inventory.instance.HasObject("Blue Card") == true && Input.GetMouseButtonDown(0) && rayHit2 == true)
+        if(Inventory.instance.HasObject("Manivelle") == true && Input.GetMouseButtonDown(0) && rayHit2 == true)
             {
                 plateformIsMoving = true;
                 plateform2IsMoving = true;
@@ -86,4 +85,5 @@ public class PorteForage : MonoBehaviour
                 Debug.Log("scitp porte marche");
             }
     }
+    // 
 }

@@ -20,7 +20,7 @@ public class PlayerMovement : MonoBehaviour
     public LayerMask itemMask;
     public LayerMask codeMask;
     public LayerMask LecteurMask;
-
+    public LayerMask LecteurForage;
     
 
     public Transform groundCheck;
@@ -38,6 +38,7 @@ public class PlayerMovement : MonoBehaviour
     public TextMeshProUGUI textPickup;
 
     private Door door;
+    private PorteForage porteForage;
     
     void Start()
     {
@@ -134,31 +135,33 @@ public class PlayerMovement : MonoBehaviour
             
             if(Input.GetMouseButtonDown(0))
             {
-            hit.transform.GetComponent<Door>().rayHit = true;
-            
+             hit.transform.GetComponent<Door>().rayHit = true;
             }
 
-           else
-           {
-            hit.transform.GetComponent<Door>().rayHit = false;
-            
+            else
+            {
+             hit.transform.GetComponent<Door>().rayHit = false;
+            }
+        }
 
-           }
-           
-           if(Input.GetMouseButtonDown(0))
+
+        if (Physics.Raycast(icamera.transform.position, icamera.transform.TransformDirection(Vector3.forward), out hit, rangePickUp, LecteurForage))
         {
-            hit.transform.GetComponent<PorteForage>().rayHit2 = true;
-        }
+        
+           if(Input.GetMouseButtonDown(0))
+           {
+             hit.transform.GetComponent<PorteForage>().rayHit2 = true;
+           }
 
            else
            {
-            hit.transform.GetComponent<PorteForage>().rayHit2 = false;
+             hit.transform.GetComponent<PorteForage>().rayHit2 = false;
            }
 
+        }  
             
             
-            
-        }
+        
         
         
 
