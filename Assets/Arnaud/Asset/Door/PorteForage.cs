@@ -11,6 +11,7 @@ public class PorteForage : MonoBehaviour
     public bool plateformIsMoving = false;
     public bool plateform2IsMoving = false;
     public bool rayHit2 = false;
+    public bool rayHit = false;
     [SerializeField] private float speedUp = 5f;
     private float diffX;
     private float diffY;

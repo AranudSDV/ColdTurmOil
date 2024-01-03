@@ -135,15 +135,26 @@ public class PlayerMovement : MonoBehaviour
             if(Input.GetMouseButtonDown(0))
             {
             hit.transform.GetComponent<Door>().rayHit = true;
-            hit.transform.GetComponent<PorteForage>().rayHit2 = true;
+            
             }
 
            else
            {
             hit.transform.GetComponent<Door>().rayHit = false;
-            hit.transform.GetComponent<PorteForage>().rayHit2 = false;
+            
 
            }
+           
+           if(Input.GetMouseButtonDown(0))
+        {
+            hit.transform.GetComponent<PorteForage>().rayHit2 = true;
+        }
+
+           else
+           {
+            hit.transform.GetComponent<PorteForage>().rayHit2 = false;
+           }
+
             
             
             
