@@ -8,9 +8,9 @@ public class PlayerMovement : MonoBehaviour
 
     public CharacterController controller;
 
-    public float speed = 7f;
-    public float sprintSpeed = 10f;
-    public float crouchSpeed = 4f;
+    public float speed = 5f;
+    public float sprintSpeed = 7f;
+    public float crouchSpeed = 1f;
     public float gravity = -9.81f;
     public float jumpHeight = 3f;
     
@@ -62,7 +62,7 @@ public class PlayerMovement : MonoBehaviour
 
         Vector3 move = transform.right * x + transform.forward * z;
 
-        controller.Move(move * speed * Time.deltaTime);
+        
 
         if(Input.GetButtonDown("Jump") && isGrounded)
         {
@@ -82,6 +82,7 @@ public class PlayerMovement : MonoBehaviour
             Vector3 scale = gameObject.GetComponent<Collider>().transform.localScale;
             scale.y = 1f;
             gameObject.GetComponent<Collider>().transform.localScale = scale;
+            controller.Move(move * speed * Time.deltaTime);
         }
         //Crouch
         if(Input.GetKey(KeyCode.LeftControl))
@@ -131,19 +132,31 @@ public class PlayerMovement : MonoBehaviour
         if (Physics.Raycast(icamera.transform.position, icamera.transform.TransformDirection(Vector3.forward), out hit, rangePickUp, LecteurMask))
         {
             
-            if(Inventory.instance.HasObject("Blue Card") == true && Input.GetMouseButtonDown(0))
+            if(Input.GetMouseButtonDown(0))
             {
-                hit.transform.GetComponent<Door>().plateformIsMoving = true;
-                //door.plateformIsMoving = true; //la plateforme se deplace
-                Debug.Log("scitp porte marche");
+            hit.transform.GetComponent<Door>().rayHit = true;
+            hit.transform.GetComponent<PorteForage>().rayHit2 = true;
             }
+
+           else
+           {
+            hit.transform.GetComponent<Door>().rayHit = false;
+            hit.transform.GetComponent<PorteForage>().rayHit2 = false;
+
+           }
+            
+            
+            
         }
+        
         
 
         if(Input.GetKey(KeyCode.LeftShift))
         {
             controller.Move(move * sprintSpeed * Time.deltaTime);
         }
+
+        controller.Move(move * speed * Time.deltaTime);
 
     }
 }

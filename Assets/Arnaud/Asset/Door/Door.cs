@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class Door : MonoBehaviour
 {
+    
     public GameObject plateform;
     public GameObject newPos;
     public bool plateformIsMoving = false;
+    public bool rayHit = false;
     [SerializeField] private float speedUp = 5f;
     private float diffX;
     private float diffY;
@@ -37,17 +39,14 @@ public class Door : MonoBehaviour
         {
             plateformIsMoving = false; //La plateforme ne se deplace plus
         }
+
+        if(Inventory.instance.HasObject("Blue Card") == true && Input.GetMouseButtonDown(0) && rayHit == true)
+            {
+                plateformIsMoving = true;
+                //door.plateformIsMoving = true; //la plateforme se deplace
+                Debug.Log("scitp porte marche");
+            }
     }
 
-    /*
-    void OnMouseDown() //En cliquant avec la souris sur l'objet
-    {
-
-        if(Inventory.instance.HasObject("Blue Card") == true)
-        {
-            plateformIsMoving = true; //la plateforme se deplace
-            Debug.Log("j'ai la blue card sur moi");
-        }
-    }
-    */
+ 
 }
