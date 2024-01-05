@@ -21,7 +21,7 @@ public class PlayerMovement : MonoBehaviour
     public LayerMask codeMask;
     public LayerMask LecteurMask;
     public LayerMask LecteurForage;
-    
+    public LayerMask LecteurBoutton;
 
     public Transform groundCheck;
     public float groundDistance =0.4f;
@@ -37,8 +37,10 @@ public class PlayerMovement : MonoBehaviour
 
     public TextMeshProUGUI textPickup;
 
-    private Door door;
-    private PorteForage porteForage;
+
+    public BouttonDoor bouttonDoor;
+    public Door door;
+    public PorteForage porteForage;
     
     void Start()
     {
@@ -142,8 +144,24 @@ public class PlayerMovement : MonoBehaviour
             {
              hit.transform.GetComponent<Door>().rayHit = false;
             }
+            
         }
 
+        if (Physics.Raycast(icamera.transform.position, icamera.transform.TransformDirection(Vector3.forward), out hit, rangePickUp, LecteurBoutton))
+        {
+            
+            if(Input.GetMouseButtonDown(0))
+            {
+             Debug.Log("raycastbouttonM");
+             hit.transform.GetComponent<BouttonDoor>().rayHitt = true;
+            }
+
+            else
+            {
+             hit.transform.GetComponent<BouttonDoor>().rayHitt = false;
+            }
+            
+        }
 
         if (Physics.Raycast(icamera.transform.position, icamera.transform.TransformDirection(Vector3.forward), out hit, rangePickUp, LecteurForage))
         {

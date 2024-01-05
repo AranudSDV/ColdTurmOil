@@ -40,7 +40,7 @@ public class Door : MonoBehaviour
             plateformIsMoving = false; //La plateforme ne se deplace plus
         }
 
-        if(Inventory.instance.HasObject("Blue Card") == true && Input.GetMouseButtonDown(0) && rayHit == true)
+        if(Inventory.instance.HasObject("Blue Card") == true && rayHit == true)
             {
                 plateformIsMoving = true;
                 //door.plateformIsMoving = true; //la plateforme se deplace
