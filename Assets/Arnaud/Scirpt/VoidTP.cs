@@ -11,11 +11,19 @@ public class VoidTP : MonoBehaviour
   
   public GameObject tp;
 
-  private void OnTriggerEnter (Collider Monstre)
+  /*private void OnTriggerEnter (Collider Monstre)
     {
         Teleportation = true;
         Debug.Log("Monstreboughhhdazazd");
     }
+    */
+    private void OnTriggerEnter (Collider colliderHit)
+    {
+    if(colliderHit.tag == "Monster")
+    {
+    Teleportation = true;
+    }
+    } 
 
 
     
