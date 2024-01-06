@@ -29,9 +29,15 @@ public class PlayerMovement : MonoBehaviour
     public GameObject icamera;
     public float rangePickUp;
 
-    bool isGrounded;
-    bool isCrouching;
-    bool itemInrange;
+    public Transform headCheck;
+    public float headDistance = 2f;
+    public LayerMask headMask;
+
+
+    public bool isBlocked = false;
+    public bool isGrounded;
+    public bool isCrouching;
+    public bool itemInrange;
 
     Vector3 velocity;
 
@@ -79,6 +85,29 @@ public class PlayerMovement : MonoBehaviour
 
         isCrouching = false;
 
+        isBlocked = Physics.CheckSphere(headCheck.position, headDistance, headMask);
+
+        //Crouch
+        if(Input.GetKey(KeyCode.F))
+        {
+            isCrouching = true;
+            
+        }
+
+        if(isBlocked == true)
+        {
+            isCrouching = true;
+        }
+
+        
+        if (isCrouching == true)
+        {
+            controller.Move(move * crouchSpeed * Time.deltaTime);
+            Vector3 scale = gameObject.GetComponent<Collider>().transform.localScale;
+            scale.y *= 0.5f;
+            gameObject.GetComponent<Collider>().transform.localScale = scale;
+        }
+
 
         if (isCrouching == false)
         {
@@ -87,15 +116,10 @@ public class PlayerMovement : MonoBehaviour
             gameObject.GetComponent<Collider>().transform.localScale = scale;
             controller.Move(move * speed * Time.deltaTime);
         }
-        //Crouch
-        if(Input.GetKey(KeyCode.LeftControl))
-        {
-            isCrouching = true;
-            controller.Move(move * crouchSpeed * Time.deltaTime);
-            Vector3 scale = gameObject.GetComponent<Collider>().transform.localScale;
-            scale.y *= 0.5f;
-            gameObject.GetComponent<Collider>().transform.localScale = scale;
-        }
+        
+
+        
+        
 
         RaycastHit hit;
         
