@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class RotateEyes : MonoBehaviour
 {
-    //public GameObject player;
+    public GameObject player;
     //public GameObject Eye;
     // Start is called before the first frame update
     void Start()
@@ -15,8 +15,7 @@ public class RotateEyes : MonoBehaviour
     // Update is called once per frame
    void Update()
     {
-      
-        //object.Transform.LookAt(player.transform.position);
+        transform.LookAt(player.transform.position);
     }
 
 }
