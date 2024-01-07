@@ -11,6 +11,7 @@ public class PorteForage : MonoBehaviour
     public bool plateformIsMoving = false;
     public bool plateform2IsMoving = false;
     public bool rayHit2 = false;
+    
     [SerializeField] private float speedUp = 5f;
     private float diffX;
     private float diffY;
@@ -22,7 +23,16 @@ public class PorteForage : MonoBehaviour
     private float diff2;
     private bool plateformHasMoved = false;
     private bool plateform2HasMoved = false;
+
+
+    public Renderer rend;
     //Initialization
+
+    void start()
+    {
+        rend = GetComponent<Renderer>();
+        rend.enabled = false;
+    }
 
     void Update()
     {
@@ -31,6 +41,7 @@ public class PorteForage : MonoBehaviour
         {
         {
             plateform.transform.position = Vector3.MoveTowards(plateform.transform.position, newPos.transform.position, speedUp * Time.deltaTime); 
+            rend.enabled = true;
         }
 
         //Calcule de coordonees 
