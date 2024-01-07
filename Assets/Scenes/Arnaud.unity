@@ -447,19 +447,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enigme
       objectReference: {fileID: 0}
-    - target: {fileID: 4913727295817847483, guid: 26b07eb6b1fc654458031faeb1ab641f,
-        type: 3}
-      propertyPath: totalPipes
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5666160369716629476, guid: 26b07eb6b1fc654458031faeb1ab641f,
-        type: 3}
-      propertyPath: correctRotation.Array.data[0]
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 1122541754733153278, guid: 26b07eb6b1fc654458031faeb1ab641f, type: 3}
-    - {fileID: 6853071825349956171, guid: 26b07eb6b1fc654458031faeb1ab641f, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
