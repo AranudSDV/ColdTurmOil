@@ -14,12 +14,19 @@ public class PipeScript : MonoBehaviour
 
     GameManager gameManager;
 
-    private void Awake()
+    public bool rayHitPipe = false;
+
+    public void Awake()
     {
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+
+        if (rayHitPipe == true)
+        {
+            Debug.Log("je sais pas2");
+        }
     }
 
-    private void Start()
+    public void Start()
     {
         PossibleRots = correctRotation.Length;
         //int rand = Random.Range(0, rotations.Length);
@@ -43,7 +50,51 @@ public class PipeScript : MonoBehaviour
         }
     }
 
-    private void OnMouseDown()
+    public void update()
+    {
+        /*if (rayHitPipe == true)
+        {
+            Debug.Log("rayhit pipescirpt ok");
+            transform.Rotate(new Vector3(0, 0, 90));
+
+            if (PossibleRots > 1)
+            {
+                if (transform.eulerAngles.z == correctRotation[0] || transform.eulerAngles.z == correctRotation[1] && isPlaced == false)
+                {
+                    isPlaced = true;
+                    gameManager.correctMove();
+                }
+                else if (isPlaced == true)
+                {
+                    isPlaced = false;
+                    gameManager.wrongMove();
+                }
+            }
+            else
+            {
+                if (transform.eulerAngles.z == correctRotation[0] && isPlaced == false)
+                {
+                    isPlaced = true;
+                    gameManager.correctMove();
+                }
+                else if (isPlaced == true)
+                {
+                    isPlaced = false;
+                    gameManager.wrongMove();
+                }
+            }
+        }
+        */
+
+        rayHitPipe = false;
+
+        if (rayHitPipe == true)
+        {
+            Debug.Log("je sais pas");
+        }
+    }
+
+   /*private void OnMouseDown()
     {
         transform.Rotate(new Vector3(0, 0, 90));
 
@@ -74,4 +125,5 @@ public class PipeScript : MonoBehaviour
             }
         }
     }
+    */
 }
