@@ -207,7 +207,7 @@ public class PlayerMovement : MonoBehaviour
 
         }  
 
-        if (Physics.Raycast(icamera.transform.position, icamera.transform.TransformDirection(Vector3.forward), out hit, rangePickUp, LecteurYellow))
+        /*if (Physics.Raycast(icamera.transform.position, icamera.transform.TransformDirection(Vector3.forward), out hit, rangePickUp, LecteurYellow))
         {
         
            if(Input.GetMouseButtonDown(0))
@@ -221,6 +221,7 @@ public class PlayerMovement : MonoBehaviour
            }
 
         }  
+        */
             
         if (Physics.Raycast(icamera.transform.position, icamera.transform.TransformDirection(Vector3.forward), out hit, rangePickUp, Pipe))
         {

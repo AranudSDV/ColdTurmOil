@@ -16,7 +16,14 @@ public class Door : MonoBehaviour
     private float diff;
     private bool plateformHasMoved = false;
     public string objectNeeded;
-    //Initialization
+
+    public Renderer rend;
+
+    void start()
+    {
+        rend = GetComponent<Renderer>();
+        rend.enabled = false;
+    }
 
     void Update()
     {
@@ -24,6 +31,8 @@ public class Door : MonoBehaviour
         if (plateformIsMoving == true) 
         {
             plateform.transform.position = Vector3.MoveTowards(plateform.transform.position, newPos.transform.position, speedUp * Time.deltaTime); 
+
+            rend.enabled = true;
         }
 
         //Calcule de coordonees 
