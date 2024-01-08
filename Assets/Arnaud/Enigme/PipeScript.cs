@@ -14,23 +14,17 @@ public class PipeScript : MonoBehaviour
 
     GameManager gameManager;
 
-    public bool rayHitPipe = false;
+    public bool rayHitPipe;
 
-    public void Awake()
+    void Awake()
     {
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
 
-        if (rayHitPipe == true)
-        {
-            Debug.Log("je sais pas2");
-        }
     }
 
-    public void Start()
+    void Start()
     {
         PossibleRots = correctRotation.Length;
-        //int rand = Random.Range(0, rotations.Length);
-        //transform.eulerAngles = new Vector3(0, 0, rotations[rand]);
         
         if(PossibleRots > 1)
         {
@@ -50,9 +44,15 @@ public class PipeScript : MonoBehaviour
         }
     }
 
-    public void update()
+    void update()
     {
-        /*if (rayHitPipe == true)
+
+        if (rayHitPipe == true)
+        {
+            Debug.Log("je sais pas");
+        }
+
+        if (rayHitPipe == true)
         {
             Debug.Log("rayhit pipescirpt ok");
             transform.Rotate(new Vector3(0, 0, 90));
@@ -84,14 +84,11 @@ public class PipeScript : MonoBehaviour
                 }
             }
         }
-        */
+        
 
-        rayHitPipe = false;
+       
 
-        if (rayHitPipe == true)
-        {
-            Debug.Log("je sais pas");
-        }
+        
     }
 
    /*private void OnMouseDown()
@@ -126,4 +123,5 @@ public class PipeScript : MonoBehaviour
         }
     }
     */
+    
 }

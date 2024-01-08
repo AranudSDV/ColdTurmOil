@@ -213,10 +213,11 @@ public class PlayerMovement : MonoBehaviour
              Debug.Log("RayHit Player script");
            }
 
-           else
+           
            {
              hit.transform.GetComponent<PipeScript>().rayHitPipe = false;
            }
+           
 
         }  
             
