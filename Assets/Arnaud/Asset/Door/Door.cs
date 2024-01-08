@@ -15,6 +15,7 @@ public class Door : MonoBehaviour
     private float diffZ;
     private float diff;
     private bool plateformHasMoved = false;
+    public string objectNeeded;
     //Initialization
 
     void Update()
@@ -40,7 +41,7 @@ public class Door : MonoBehaviour
             plateformIsMoving = false; //La plateforme ne se deplace plus
         }
 
-        if(Inventory.instance.HasObject("Blue Card") == true && rayHit == true)
+        if(Inventory.instance.HasObject(objectNeeded) == true && rayHit == true)
             {
                 plateformIsMoving = true;
                 //door.plateformIsMoving = true; //la plateforme se deplace

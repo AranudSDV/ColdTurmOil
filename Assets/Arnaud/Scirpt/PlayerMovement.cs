@@ -22,6 +22,7 @@ public class PlayerMovement : MonoBehaviour
     public LayerMask LecteurMask;
     public LayerMask LecteurForage;
     public LayerMask LecteurBoutton;
+    public LayerMask LecteurYellow;
     public LayerMask Pipe;
 
     public Transform groundCheck;
@@ -39,6 +40,8 @@ public class PlayerMovement : MonoBehaviour
     public bool isGrounded;
     public bool isCrouching;
     public bool itemInrange;
+
+    private bool rayHit3;
     
 
     Vector3 velocity;
@@ -200,6 +203,21 @@ public class PlayerMovement : MonoBehaviour
            else
            {
              hit.transform.GetComponent<PorteForage>().rayHit2 = false;
+           }
+
+        }  
+
+        if (Physics.Raycast(icamera.transform.position, icamera.transform.TransformDirection(Vector3.forward), out hit, rangePickUp, LecteurYellow))
+        {
+        
+           if(Input.GetMouseButtonDown(0))
+           {
+             hit.transform.GetComponent<PorteYellow>().rayHit3 = true;
+           }
+
+           else
+           {
+             hit.transform.GetComponent<PorteYellow>().rayHit3 = false;
            }
 
         }  
