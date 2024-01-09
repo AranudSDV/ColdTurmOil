@@ -52,7 +52,7 @@ Material:
     m_Ints: []
     m_Floats:
     - _EdgeFallOff: 0.28
-    - _Opacity: 0.05
+    - _Opacity: 0.02
     - _QueueControl: 0
     - _QueueOffset: 0
     m_Colors:
