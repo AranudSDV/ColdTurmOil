@@ -14,7 +14,7 @@ public class PipeScript : MonoBehaviour
 
     GameManager gameManager;
 
-    public bool rayHitPipe;
+    public bool rayHitPipe = false;
 
     void Awake()
     {
@@ -47,7 +47,7 @@ public class PipeScript : MonoBehaviour
     void update()
     {
 
-        if (rayHitPipe == true)
+        if (Input.GetMouseButtonDown(0) && rayHitPipe == true)
         {
             Debug.Log("je sais pas");
         }

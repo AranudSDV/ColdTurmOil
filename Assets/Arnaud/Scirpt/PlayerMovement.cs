@@ -42,6 +42,7 @@ public class PlayerMovement : MonoBehaviour
     public bool itemInrange;
 
     private bool rayHit3;
+    private bool rayHitPipe;
     
 
     Vector3 velocity;
@@ -207,21 +208,7 @@ public class PlayerMovement : MonoBehaviour
 
         }  
 
-        /*if (Physics.Raycast(icamera.transform.position, icamera.transform.TransformDirection(Vector3.forward), out hit, rangePickUp, LecteurYellow))
-        {
-        
-           if(Input.GetMouseButtonDown(0))
-           {
-             hit.transform.GetComponent<PorteYellow>().rayHit3 = true;
-           }
 
-           else
-           {
-             hit.transform.GetComponent<PorteYellow>().rayHit3 = false;
-           }
-
-        }  
-        */
             
         if (Physics.Raycast(icamera.transform.position, icamera.transform.TransformDirection(Vector3.forward), out hit, rangePickUp, Pipe))
         {
