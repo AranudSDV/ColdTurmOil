@@ -7,8 +7,13 @@ public class trigger : MonoBehaviour
   public Collider Plaque;
     public GameObject truc;
     public GameObject newPos;
+    public GameObject trappe;
     
     public bool objectIsMoving = false;
+
+    
+    
+
     [SerializeField] private float speedUp = 5f;
     private float diffX;
     private float diffY;
@@ -31,6 +36,14 @@ public class trigger : MonoBehaviour
     private float diffZ3;
     private float diff3;
     private bool objectHasMoved3 = false;
+
+    public GameObject newPosPlaque;
+    public bool plaqueIsMoving = false;
+    private float diffXPlaque;
+    private float diffYPlaque;
+    private float diffZPlaque;
+    private float diffPlaque;
+    private bool objectHasMovedPlaque = false;
 
 
     void Update()
@@ -102,12 +115,33 @@ public class trigger : MonoBehaviour
       {
         objectIsMoving3 = false; 
       }
+
+      if (plaqueIsMoving == true) 
+      {
+        trappe.transform.position = Vector3.MoveTowards(trappe.transform.position, newPosPlaque.transform.position, speedUp * Time.deltaTime); 
+      }
+
+        
+      float diffXPlaque = trappe.transform.position.x - newPosPlaque.transform.position.x; 
+      float diffYPlaque = trappe.transform.position.y - newPosPlaque.transform.position.y; 
+      float diffZPlaque = trappe.transform.position.z - newPosPlaque.transform.position.z; 
+      float diffPlaque = diffXPlaque + diffYPlaque + diffZPlaque; 
+      if(diffPlaque == 0)
+      {
+        objectHasMovedPlaque = true; 
+        
+      }
+      if (objectHasMovedPlaque == true) 
+      {
+        plaqueIsMoving = false; 
+      }
     }    
      
     private void OnTriggerEnter (Collider Plaque)
     {
       objectIsMoving = true;
       Debug.Log("PlaqueDepression");
+      plaqueIsMoving = true;
     }
 
     void DestroyGameObject()

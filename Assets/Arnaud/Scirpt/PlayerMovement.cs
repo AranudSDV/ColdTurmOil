@@ -216,10 +216,9 @@ public class PlayerMovement : MonoBehaviour
            if(Input.GetMouseButtonDown(0))
            {
              hit.transform.GetComponent<PipeScript>().rayHitPipe = true;
-             Debug.Log("RayHit Player script");
+             Debug.Log("RayHit Player script " + hit.transform.name);
            }
-
-           
+           else 
            {
              hit.transform.GetComponent<PipeScript>().rayHitPipe = false;
            }

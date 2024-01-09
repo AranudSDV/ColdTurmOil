@@ -44,7 +44,7 @@ public class PipeScript : MonoBehaviour
         }
     }
 
-    void update()
+    void Update()
     {
 
         if (Input.GetMouseButtonDown(0) && rayHitPipe == true)
