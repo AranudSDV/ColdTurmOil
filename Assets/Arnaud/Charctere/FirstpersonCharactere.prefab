@@ -76,52 +76,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controller: {fileID: 3035664945541485951}
   speed: 12
-  sprintSpeed: 7
-  crouchSpeed: 1
   gravity: -20
   jumpHeight: 3
-  itempickup: {fileID: 0}
-  itemMask:
-    serializedVersion: 2
-    m_Bits: 0
-  codeMask:
-    serializedVersion: 2
-    m_Bits: 0
-  LecteurMask:
-    serializedVersion: 2
-    m_Bits: 0
-  LecteurForage:
-    serializedVersion: 2
-    m_Bits: 0
-  LecteurBoutton:
-    serializedVersion: 2
-    m_Bits: 0
-  LecteurYellow:
-    serializedVersion: 2
-    m_Bits: 0
-  Pipe:
-    serializedVersion: 2
-    m_Bits: 0
   groundCheck: {fileID: 7376547171452104685}
   groundDistance: 0.4
   groundMask:
     serializedVersion: 2
     m_Bits: 64
-  icamera: {fileID: 0}
-  rangePickUp: 0
-  headCheck: {fileID: 0}
-  headDistance: 2
-  headMask:
-    serializedVersion: 2
-    m_Bits: 0
-  isBlocked: 0
-  isGrounded: 0
-  isCrouching: 0
-  itemInrange: 0
-  textPickup: {fileID: 0}
-  bouttonDoor: {fileID: 0}
-  door: {fileID: 0}
-  porteForage: {fileID: 0}
 --- !u!1 &1785570017205539776
 GameObject:
   m_ObjectHideFlags: 0
@@ -274,7 +235,6 @@ GameObject:
   - component: {fileID: 2136081140389526004}
   - component: {fileID: 2981078481438969717}
   - component: {fileID: 7227729938078403557}
-  - component: {fileID: -8552096684619929841}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -431,16 +391,3 @@ MonoBehaviour:
   blendDistance: 0
   weight: 1
   sharedProfile: {fileID: 11400000, guid: 705b51e40041b0f4690196995385d8f4, type: 2}
---- !u!114 &-8552096684619929841
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4228399982522111612}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attenuationObject: {fileID: 0}
