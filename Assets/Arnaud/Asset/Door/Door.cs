@@ -2,8 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class Door : MonoBehaviour
 {
+
+    
     
     public GameObject plateform;
     public GameObject newPos;
@@ -33,6 +36,8 @@ public class Door : MonoBehaviour
             plateform.transform.position = Vector3.MoveTowards(plateform.transform.position, newPos.transform.position, speedUp * Time.deltaTime); 
 
             rend.enabled = true;
+
+            
         }
 
         //Calcule de coordonees 
@@ -52,9 +57,15 @@ public class Door : MonoBehaviour
 
         if(Inventory.instance.HasObject(objectNeeded) == true && rayHit == true)
             {
+                if(plateformIsMoving == false)
+                {
+                    AudioManager.instance.PlayOneShot(FMODEvent.instance.OpenDoorSound, this.transform.position);
+                }
                 plateformIsMoving = true;
                 //door.plateformIsMoving = true; //la plateforme se deplace
                 Debug.Log("scitp porte marche");
+                
+                
             }
     }
 

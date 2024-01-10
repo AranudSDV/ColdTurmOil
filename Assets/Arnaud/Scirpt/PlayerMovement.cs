@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using FMOD.Studio;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -53,17 +54,22 @@ public class PlayerMovement : MonoBehaviour
     public BouttonDoor bouttonDoor;
     public Door door;
     public PorteForage porteForage;
+
+    //audio
+    private EventInstance playerFootsteps;
     
-    void Start()
+    private void Start()
     {
-        
+        playerFootsteps = AudioManager.instance.CreateEventInstance(FMODEvent.instance.playerFootsteps);
+
     }
 
+    
    
     void Update()
     {
 
-       
+       UpdateSound();
 
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
 
@@ -238,4 +244,27 @@ public class PlayerMovement : MonoBehaviour
         controller.Move(move * speed * Time.deltaTime);
 
     }
+
+    private void UpdateSound()
+    {
+        if (Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0 )
+        {
+            if(isGrounded)
+            {
+            Debug.Log("LAmarche");
+            PLAYBACK_STATE playbackState;
+            playerFootsteps.getPlaybackState(out playbackState);
+            if(playbackState.Equals(PLAYBACK_STATE.STOPPED))
+            {
+                playerFootsteps.start();
+            }
+            }
+        }
+        else
+        {
+            playerFootsteps.stop(STOP_MODE.ALLOWFADEOUT);
+        }
+    }
+    
+    //velocity.x != 0 || velocity.z != 0  && 
 }

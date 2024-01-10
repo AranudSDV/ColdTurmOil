@@ -1,5 +1,316 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8557173781921857993
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/map/outside/map_outside_minedoor_01
+  m_EditorClassIdentifier: 
+  Path: event:/map/outside/map_outside_minedoor_01
+  Guid:
+    Data1: 1056725488
+    Data2: 1197540467
+    Data3: 596485251
+    Data4: -318323291
+  Banks:
+  - {fileID: -7073281099961815156}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 9500
+--- !u!114 &-8458282259219267790
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/map/tuto/map_tuto_fusibleboite_01
+  m_EditorClassIdentifier: 
+  Path: event:/map/tuto/map_tuto_fusibleboite_01
+  Guid:
+    Data1: 1818005820
+    Data2: 1250755287
+    Data3: 363604662
+    Data4: -1337984741
+  Banks:
+  - {fileID: -7073281099961815156}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 3000
+--- !u!114 &-7840616295487783546
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: 
+  Path: ../../../Desktop/Unearthed_Sound/Unearthed/Build/Desktop/Master.strings.bank
+  Name: Master.strings
+  StudioPath: bank:/Master.strings
+  lastModified: 638405013679055030
+  FileSizes:
+  - Name: Desktop
+    Value: 1780
+  Exists: 1
+--- !u!114 &-7346868653520789780
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/map/tuto/map_tuto_garagedoor_01
+  m_EditorClassIdentifier: 
+  Path: event:/map/tuto/map_tuto_garagedoor_01
+  Guid:
+    Data1: -1941798196
+    Data2: 1245268877
+    Data3: -575375975
+    Data4: -518853816
+  Banks:
+  - {fileID: -7073281099961815156}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 13500
+--- !u!114 &-7073281099961815156
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: ../../../Desktop/Unearthed_Sound/Unearthed/Build/Desktop/Master.bank
+  Name: Master
+  StudioPath: bank:/Master
+  lastModified: 638405013679038146
+  FileSizes:
+  - Name: Desktop
+    Value: 10327648
+  Exists: 1
+--- !u!114 &-5232833073694157997
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/char_walking_01/FloorType
+  m_EditorClassIdentifier: 
+  Name: FloorType
+  StudioPath: 
+  Min: 0
+  Max: 3
+  Default: 0
+  ID:
+    data1: 2951111934
+    data2: 874876676
+  Type: 2
+  IsGlobal: 0
+  Labels:
+  - Steel
+  - Snow
+  - Concrete
+  - Carpet
+  Exists: 1
+--- !u!114 &-4613802496829378572
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/map/Mine/map_mine_fall_01
+  m_EditorClassIdentifier: 
+  Path: event:/map/Mine/map_mine_fall_01
+  Guid:
+    Data1: 185710907
+    Data2: 1187940138
+    Data3: 361804954
+    Data4: -1387175808
+  Banks:
+  - {fileID: -7073281099961815156}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 827
+--- !u!114 &-3363729680415215257
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/map/tuto/map_tuto_fusible_activate_01
+  m_EditorClassIdentifier: 
+  Path: event:/map/tuto/map_tuto_fusible_activate_01
+  Guid:
+    Data1: 1305107196
+    Data2: 1285504340
+    Data3: 1260603796
+    Data4: 43026610
+  Banks:
+  - {fileID: -7073281099961815156}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1250
+--- !u!114 &-3218809764977393433
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/character/char_death_01
+  m_EditorClassIdentifier: 
+  Path: event:/character/char_death_01
+  Guid:
+    Data1: -2039562013
+    Data2: 1232081883
+    Data3: 1537346716
+    Data4: 2012956705
+  Banks:
+  - {fileID: -7073281099961815156}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 4149
+--- !u!114 &-2658619067208174049
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/character/char_itemget_01
+  m_EditorClassIdentifier: 
+  Path: event:/character/char_itemget_01
+  Guid:
+    Data1: 1393667256
+    Data2: 1219830776
+    Data3: -203311210
+    Data4: -1142128879
+  Banks:
+  - {fileID: -7073281099961815156}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 520
+--- !u!114 &-2218614873067266426
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/map/Mine/map_mine_door_metal_close_01
+  m_EditorClassIdentifier: 
+  Path: event:/map/Mine/map_mine_door_metal_close_01
+  Guid:
+    Data1: 1723269173
+    Data2: 1129361591
+    Data3: 110818717
+    Data4: -196598327
+  Banks:
+  - {fileID: -7073281099961815156}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2437
+--- !u!114 &-601809688919121596
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/map/tuto/map_tuto_door_wood_close_01
+  m_EditorClassIdentifier: 
+  Path: event:/map/tuto/map_tuto_door_wood_close_01
+  Guid:
+    Data1: -221232396
+    Data2: 1098485084
+    Data3: -858286966
+    Data4: 1018832693
+  Banks:
+  - {fileID: -7073281099961815156}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1000
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12,10 +323,305 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d32cf7c32a3ed8347bac48ef5ed56d82, type: 3}
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: 
-  EditorBanks: []
-  EditorEvents: []
+  EditorBanks:
+  - {fileID: -7840616295487783546}
+  - {fileID: -7073281099961815156}
+  EditorEvents:
+  - {fileID: -2218614873067266426}
+  - {fileID: -4613802496829378572}
+  - {fileID: -8458282259219267790}
+  - {fileID: 1725866958189888076}
+  - {fileID: 3558969144380980634}
+  - {fileID: 1001297112408576608}
+  - {fileID: 8849248973248297249}
+  - {fileID: 8114197512344434126}
+  - {fileID: 1152617067772578865}
+  - {fileID: 5953719966860367062}
+  - {fileID: -2658619067208174049}
+  - {fileID: -7346868653520789780}
+  - {fileID: 2037860642054885511}
+  - {fileID: -3218809764977393433}
+  - {fileID: 2449298722694249399}
+  - {fileID: -8557173781921857993}
+  - {fileID: -601809688919121596}
+  - {fileID: -3363729680415215257}
   EditorParameters: []
-  MasterBanks: []
-  StringsBanks: []
-  cacheTime: 0
+  MasterBanks:
+  - {fileID: -7073281099961815156}
+  StringsBanks:
+  - {fileID: -7840616295487783546}
+  cacheTime: 638405013679055030
   cacheVersion: 131616
+--- !u!114 &1001297112408576608
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Ambient/ambient_environement_01
+  m_EditorClassIdentifier: 
+  Path: event:/Ambient/ambient_environement_01
+  Guid:
+    Data1: 23339370
+    Data2: 1340239999
+    Data3: -1991415423
+    Data4: -1433846999
+  Banks:
+  - {fileID: -7073281099961815156}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 3733276399869893411}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 29587
+--- !u!114 &1152617067772578865
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/map/Mine/map_mine_button
+  m_EditorClassIdentifier: 
+  Path: event:/map/Mine/map_mine_button
+  Guid:
+    Data1: 718112169
+    Data2: 1241507948
+    Data3: 1950226878
+    Data4: 272985099
+  Banks:
+  - {fileID: -7073281099961815156}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 240
+--- !u!114 &1725866958189888076
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/map/Mine/map_mine_ventopen_01
+  m_EditorClassIdentifier: 
+  Path: event:/map/Mine/map_mine_ventopen_01
+  Guid:
+    Data1: -96907183
+    Data2: 1311597792
+    Data3: 754702730
+    Data4: 1279361971
+  Banks:
+  - {fileID: -7073281099961815156}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1208
+--- !u!114 &2037860642054885511
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/map/Mine/map_mine_foreuse_start
+  m_EditorClassIdentifier: 
+  Path: event:/map/Mine/map_mine_foreuse_start
+  Guid:
+    Data1: -1731221795
+    Data2: 1210338789
+    Data3: -740015427
+    Data4: 1423883810
+  Banks:
+  - {fileID: -7073281099961815156}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 151508
+--- !u!114 &2449298722694249399
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/map/Mine/map_mine_door_metal_open_01
+  m_EditorClassIdentifier: 
+  Path: event:/map/Mine/map_mine_door_metal_open_01
+  Guid:
+    Data1: 1885624295
+    Data2: 1225971425
+    Data3: 1824596899
+    Data4: 852080218
+  Banks:
+  - {fileID: -7073281099961815156}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2000
+--- !u!114 &3558969144380980634
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/map/Mine/map_mine_pc_01
+  m_EditorClassIdentifier: 
+  Path: event:/map/Mine/map_mine_pc_01
+  Guid:
+    Data1: 1948434773
+    Data2: 1199186080
+    Data3: -816249467
+    Data4: 191937954
+  Banks:
+  - {fileID: -7073281099961815156}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1031
+--- !u!114 &3733276399869893411
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/ambient_environement_01/IsBlizzard
+  m_EditorClassIdentifier: 
+  Name: IsBlizzard
+  StudioPath: 
+  Min: 0
+  Max: 3
+  Default: 0
+  ID:
+    data1: 3263795548
+    data2: 4232496543
+  Type: 2
+  IsGlobal: 0
+  Labels:
+  - Outside
+  - OutsideBlizzard
+  - InsideTuto
+  - InsideMine
+  Exists: 1
+--- !u!114 &5953719966860367062
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/map/tuto/map_tuto_door_wood_open_01
+  m_EditorClassIdentifier: 
+  Path: event:/map/tuto/map_tuto_door_wood_open_01
+  Guid:
+    Data1: -1604767574
+    Data2: 1121290773
+    Data3: 557886081
+    Data4: 653343531
+  Banks:
+  - {fileID: -7073281099961815156}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1000
+--- !u!114 &8114197512344434126
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/map/Mine/map_mine_vent_monster_01
+  m_EditorClassIdentifier: 
+  Path: event:/map/Mine/map_mine_vent_monster_01
+  Guid:
+    Data1: 299372686
+    Data2: 1256985264
+    Data3: -1921623628
+    Data4: -1513603699
+  Banks:
+  - {fileID: -7073281099961815156}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 28000
+--- !u!114 &8849248973248297249
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/character/char_walking_01
+  m_EditorClassIdentifier: 
+  Path: event:/character/char_walking_01
+  Guid:
+    Data1: -222335091
+    Data2: 1176681286
+    Data3: -1434767425
+    Data4: -1842398413
+  Banks:
+  - {fileID: -7073281099961815156}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters:
+  - {fileID: -5232833073694157997}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 4501
