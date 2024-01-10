@@ -41,6 +41,12 @@ public class BouttonDoor : MonoBehaviour
 
         if(rayHitt == true)
             {
+
+                if(plateformIsMoving == false)
+                {
+                    AudioManager.instance.PlayOneShot(FMODEvent.instance.OpenDoorSound, this.transform.position);
+                }
+            
                 plateformIsMoving = true;
                 //door.plateformIsMoving = true; //la plateforme se deplace
                 Debug.Log("scitp porte marche");

@@ -5,9 +5,19 @@ using FMODUnity;
 
 public class FMODEvent : MonoBehaviour
 {
+    [field: Header("Ambiant win SFX")]
+
+    [field: SerializeField] public EventReference AmbiantSFX { get; private set; }
+
+
+
     [field: Header("Metal Door Open SFX")]
 
     [field: SerializeField] public EventReference OpenDoorSound { get; private set; }
+
+    [field: Header("Forage Door Open SFX")]
+
+    [field: SerializeField] public EventReference OpenDoorForageSound { get; private set; }
 
     [field: Header("Player SFX")]
 

@@ -10,6 +10,7 @@ public class trigger : MonoBehaviour
     public GameObject trappe;
     
     public bool objectIsMoving = false;
+    public bool playerinzone;
 
     
     

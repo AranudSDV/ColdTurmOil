@@ -90,6 +90,10 @@ public class PorteForage : MonoBehaviour
 
         if(Inventory.instance.HasObject("Manivelle") == true && Input.GetMouseButtonDown(0) && rayHit2 == true)
             {
+                if(plateformIsMoving == false && plateform2IsMoving == false)
+                {
+                    AudioManager.instance.PlayOneShot(FMODEvent.instance.OpenDoorForageSound, this.transform.position);
+                }
                 plateformIsMoving = true;
                 plateform2IsMoving = true;
                 
