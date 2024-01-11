@@ -63,8 +63,7 @@ public class trigger : MonoBehaviour
       if(diff == 0)
       {
         objectHasMoved = true; 
-        //Destroy(gameObject);
-        //Destroy(truc);
+        
         objectIsMoving2 = true;
       }
       if (objectHasMoved == true) 
@@ -86,8 +85,7 @@ public class trigger : MonoBehaviour
       if(diff2 == 0)
       {
         objectHasMoved2 = true; 
-        //Destroy(gameObject);
-        //Destroy(truc);
+        
         objectIsMoving3 = true;
       }
       if (objectHasMoved2 == true) 

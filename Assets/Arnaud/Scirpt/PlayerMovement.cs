@@ -143,6 +143,8 @@ public class PlayerMovement : MonoBehaviour
             if(Input.GetMouseButtonDown(0))
             {
                 hit.transform.GetComponent<ItemPickup>().PickUp();
+                AudioManager.instance.PlayOneShot(FMODEvent.instance.itempickupSound, this.transform.position);
+
             }
             
             textPickup.text = "Ramassez " + hit.transform.name;

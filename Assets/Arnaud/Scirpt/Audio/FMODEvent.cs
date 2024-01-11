@@ -9,11 +9,21 @@ public class FMODEvent : MonoBehaviour
 
     [field: SerializeField] public EventReference AmbiantSFX { get; private set; }
 
+    [field: Header("Item pickup")]
+
+    [field: SerializeField] public EventReference itempickupSound { get; private set; }
+
+
+
 
 
     [field: Header("Metal Door Open SFX")]
 
     [field: SerializeField] public EventReference OpenDoorSound { get; private set; }
+
+    [field: Header("Enclanchament Manivelle")]
+
+    [field: SerializeField] public EventReference ManvilleSound { get; private set; }
 
     [field: Header("Forage Door Open SFX")]
 

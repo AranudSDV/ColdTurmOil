@@ -8,6 +8,10 @@ public class PorteForage : MonoBehaviour
     public GameObject newPos;
     public GameObject plateform2;
     public GameObject newPos2;
+    public GameObject songPosition;
+    public GameObject fxElectricite;
+    public GameObject SoundFX;
+
     public bool plateformIsMoving = false;
     public bool plateform2IsMoving = false;
     public bool rayHit2 = false;
@@ -23,6 +27,8 @@ public class PorteForage : MonoBehaviour
     private float diff2;
     private bool plateformHasMoved = false;
     private bool plateform2HasMoved = false;
+    public bool FxEnCours = true;
+    
 
 
     public Renderer rend;
@@ -32,6 +38,7 @@ public class PorteForage : MonoBehaviour
     {
         rend = GetComponent<Renderer>();
         rend.enabled = false;
+        
     }
 
     void Update()
@@ -42,7 +49,12 @@ public class PorteForage : MonoBehaviour
         {
             plateform.transform.position = Vector3.MoveTowards(plateform.transform.position, newPos.transform.position, speedUp * Time.deltaTime); 
             rend.enabled = true;
+            Destroy(fxElectricite);
+            Destroy(SoundFX);
+
         }
+
+        
 
         //Calcule de coordonees 
         //Est-ce que la plateforme est en position?
@@ -92,7 +104,8 @@ public class PorteForage : MonoBehaviour
             {
                 if(plateformIsMoving == false && plateform2IsMoving == false)
                 {
-                    AudioManager.instance.PlayOneShot(FMODEvent.instance.OpenDoorForageSound, this.transform.position);
+                    AudioManager.instance.PlayOneShot(FMODEvent.instance.OpenDoorForageSound, songPosition.transform.position);
+                    AudioManager.instance.PlayOneShot(FMODEvent.instance.ManvilleSound, this.transform.position);
                 }
                 plateformIsMoving = true;
                 plateform2IsMoving = true;
