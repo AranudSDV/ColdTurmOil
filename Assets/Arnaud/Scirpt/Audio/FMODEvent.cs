@@ -21,6 +21,10 @@ public class FMODEvent : MonoBehaviour
 
     [field: SerializeField] public EventReference OpenDoorSound { get; private set; }
 
+    [field: Header("Metal Door close SFX")]
+
+    [field: SerializeField] public EventReference CloseDoorSound { get; private set; }
+
     [field: Header("Son Monstre")]
 
     [field: SerializeField] public EventReference MonsterPoursuiterSound { get; private set; }

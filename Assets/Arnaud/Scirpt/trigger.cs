@@ -8,6 +8,7 @@ public class trigger : MonoBehaviour
     public GameObject truc;
     public GameObject newPos;
     public GameObject trappe;
+    public GameObject positionMob;
     
     public bool objectIsMoving = false;
     public bool playerinzone;
@@ -138,8 +139,16 @@ public class trigger : MonoBehaviour
      
     private void OnTriggerEnter (Collider Plaque)
     {
+      if( objectIsMoving == false)
+      {
+        AudioManager.instance.PlayOneShot(FMODEvent.instance.MonsterPoursuiterSound, positionMob.transform.position);
+      }
       objectIsMoving = true;
       Debug.Log("PlaqueDepression");
+      if( plaqueIsMoving == false)
+      {
+        AudioManager.instance.PlayOneShot(FMODEvent.instance.CloseDoorSound, this.transform.position);
+      }
       plaqueIsMoving = true;
     }
 
