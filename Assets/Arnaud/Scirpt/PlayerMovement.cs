@@ -28,7 +28,17 @@ public class PlayerMovement : MonoBehaviour
 
     public Transform groundCheck;
     public float groundDistance =0.4f;
-    public LayerMask groundMask;
+
+    public LayerMask groundMaskSteel;
+    public LayerMask groundMaskSnow;
+    public LayerMask groundMaskConcrete;
+    public LayerMask groundMaskCarpet;
+
+    public bool isGroundedSteel = false;
+    public bool isGroundedSnow = false;
+    public bool isGroundedConcrete = false;
+    public bool isGroundedCarpet = false;
+
     public GameObject icamera;
     public float rangePickUp;
 
@@ -38,7 +48,6 @@ public class PlayerMovement : MonoBehaviour
 
 
     public bool isBlocked = false;
-    public bool isGrounded;
     public bool isCrouching;
     public bool itemInrange;
 
@@ -69,13 +78,19 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
 
-       UpdateSound();
+       //UpdateSound();
 
-        isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
+        isGroundedSteel = Physics.CheckSphere(groundCheck.position, groundDistance, groundMaskSteel);
+        isGroundedSnow = Physics.CheckSphere(groundCheck.position, groundDistance, groundMaskSnow);
+        isGroundedConcrete = Physics.CheckSphere(groundCheck.position, groundDistance, groundMaskConcrete);
+        isGroundedCarpet = Physics.CheckSphere(groundCheck.position, groundDistance, groundMaskCarpet);
 
-        if(isGrounded && velocity.y < 0)
+        if(velocity.y < 0)
         {
-            velocity.y = -2f;
+            if(isGroundedCarpet || isGroundedConcrete || isGroundedSnow || isGroundedSteel)
+            {
+             velocity.y = -2f;
+            }
         }
 
         float x = Input.GetAxis("Horizontal");
@@ -85,10 +100,14 @@ public class PlayerMovement : MonoBehaviour
 
         
 
-        if(Input.GetButtonDown("Jump") && isGrounded)
+        if(Input.GetButtonDown("Jump"))
         {
-            velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
-        }
+            if(isGroundedCarpet || isGroundedConcrete || isGroundedSnow || isGroundedSteel)
+            {
+             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
+            }
+        }    
+
 
         velocity.y += gravity * Time.deltaTime;
 
@@ -262,7 +281,7 @@ public class PlayerMovement : MonoBehaviour
 
     }
 
-    private void UpdateSound()
+    /*private void UpdateSound()
     {
         if (Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0 )
         {
@@ -280,7 +299,8 @@ public class PlayerMovement : MonoBehaviour
         {
             playerFootsteps.stop(STOP_MODE.ALLOWFADEOUT);
         }
+
     }
+    */
     
-    //velocity.x != 0 || velocity.z != 0  && 
 }
