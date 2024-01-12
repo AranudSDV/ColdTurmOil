@@ -43,6 +43,11 @@ public class FMODEvent : MonoBehaviour
 
     public static FMODEvent instance { get; private set; }
 
+    [field: Header("Start Autodestruction")]
+
+    [field: SerializeField] public EventReference AutodestructionSound { get; private set; }
+
+
     private void Awake()
     {
         if (instance  != null)

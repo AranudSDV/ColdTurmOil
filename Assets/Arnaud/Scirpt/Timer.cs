@@ -10,10 +10,14 @@ public class Timer : MonoBehaviour
     public int countdownTime;
     public TextMeshProUGUI countdownDisplay;
     
+    
 
     void Start()
     {
-        StartCoroutine(countdownToStart());
+        
+        
+     StartCoroutine(countdownToStart());
+
     }
 
     IEnumerator countdownToStart()

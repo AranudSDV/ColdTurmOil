@@ -185,12 +185,27 @@ public class PlayerMovement : MonoBehaviour
             
         }
 
+        if (Physics.Raycast(icamera.transform.position, icamera.transform.TransformDirection(Vector3.forward), out hit, rangePickUp, LecteurYellow))
+        {
+            
+            if(Input.GetMouseButtonDown(0))
+            {
+             hit.transform.GetComponent<LastEpreuve>().rayHitCard = true;
+            }
+
+            else
+            {
+             hit.transform.GetComponent<LastEpreuve>().rayHitCard = false;
+            }
+            
+        }
+
         if (Physics.Raycast(icamera.transform.position, icamera.transform.TransformDirection(Vector3.forward), out hit, rangePickUp, LecteurBoutton))
         {
             
             if(Input.GetMouseButtonDown(0))
             {
-             Debug.Log("raycastbouttonM");
+             //Debug.Log("raycastbouttonM");
              hit.transform.GetComponent<BouttonDoor>().rayHitt = true;
             }
 
@@ -224,7 +239,7 @@ public class PlayerMovement : MonoBehaviour
            if(Input.GetMouseButtonDown(0))
            {
              hit.transform.GetComponent<PipeScript>().rayHitPipe = true;
-             Debug.Log("RayHit Player script " + hit.transform.name);
+             //Debug.Log("RayHit Player script " + hit.transform.name);
            }
            else 
            {
@@ -253,7 +268,6 @@ public class PlayerMovement : MonoBehaviour
         {
             if(isGrounded)
             {
-            Debug.Log("LAmarche");
             PLAYBACK_STATE playbackState;
             playerFootsteps.getPlaybackState(out playbackState);
             if(playbackState.Equals(PLAYBACK_STATE.STOPPED))

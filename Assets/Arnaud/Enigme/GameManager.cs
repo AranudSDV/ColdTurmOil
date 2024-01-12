@@ -7,19 +7,28 @@ public class GameManager : MonoBehaviour
 
     public GameObject PipesHolder;
     public GameObject[] Pipes;
+    public GameObject Card;
 
     [SerializeField]
     int totalPipes = 0;
     [SerializeField]
     int correctedPipes = 0;
 
-    
+
+    [SerializeField] private float speedUp = 5f;
+    private float diffX;
+    private float diffY;
+    private float diffZ;
+    private float diff;
+    private bool CardHasMoved = false;
+    private bool CardIsMoving = false;
+
 
     // Start is called before the first frame update
     void Start()
     {
         
-        totalPipes = PipesHolder.transform.childCount;
+        //totalPipes = PipesHolder.transform.childCount;
 
         Pipes = new GameObject[totalPipes];
 
@@ -38,9 +47,13 @@ public class GameManager : MonoBehaviour
         if(correctedPipes == totalPipes)
         {
             Debug.Log("You win!");
+            CardIsMoving = true;
+
+            Card.SetActive(true);
             
         }
     }
+
 
     public void wrongMove()
     {

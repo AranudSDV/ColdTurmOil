@@ -59,7 +59,7 @@ public class Door : MonoBehaviour
             {
                 if(plateformIsMoving == false)
                 {
-                    AudioManager.instance.PlayOneShot(FMODEvent.instance.OpenDoorSound, this.transform.position);
+                    AudioManager.instance.PlayOneShot(FMODEvent.instance.OpenDoorSound, plateform.transform.position);
                 }
                 plateformIsMoving = true;
                 //door.plateformIsMoving = true; //la plateforme se deplace

@@ -5,72 +5,72 @@ using UnityEngine;
 public class trigger : MonoBehaviour
 {
   public Collider Plaque;
-    public GameObject truc;
-    public GameObject newPos;
-    public GameObject trappe;
-    public GameObject positionMob;
+  public GameObject truc;
+  public GameObject newPos;
+  public GameObject trappe;
+  public GameObject positionMob;
     
-    public bool objectIsMoving = false;
-    public bool playerinzone;
+  public bool objectIsMoving = false;
+  public bool playerinzone;
 
     
     
 
-    [SerializeField] private float speedUp = 5f;
-    private float diffX;
-    private float diffY;
-    private float diffZ;
-    private float diff;
-    private bool objectHasMoved = false;
+  [SerializeField] private float speedUp = 5f;
+  private float diffX;
+  private float diffY;
+  private float diffZ;
+  private float diff;
+  private bool objectHasMoved = false;
 
-    public GameObject newPos2;
-    public bool objectIsMoving2 = false;
-    private float diffX2;
-    private float diffY2;
-    private float diffZ2;
-    private float diff2;
-    private bool objectHasMoved2 = false;
+  public GameObject newPos2;
+  public bool objectIsMoving2 = false;
+  private float diffX2;
+  private float diffY2;
+  private float diffZ2;
+  private float diff2;
+  private bool objectHasMoved2 = false;
 
-    public GameObject newPos3;
-    public bool objectIsMoving3 = false;
-    private float diffX3;
-    private float diffY3;
-    private float diffZ3;
-    private float diff3;
-    private bool objectHasMoved3 = false;
+  public GameObject newPos3;
+  public bool objectIsMoving3 = false;
+  private float diffX3;
+  private float diffY3;
+  private float diffZ3;
+  private float diff3;
+  private bool objectHasMoved3 = false;
 
-    public GameObject newPosPlaque;
-    public bool plaqueIsMoving = false;
-    private float diffXPlaque;
-    private float diffYPlaque;
-    private float diffZPlaque;
-    private float diffPlaque;
-    private bool objectHasMovedPlaque = false;
+  public GameObject newPosPlaque;
+  public bool plaqueIsMoving = false;
+  private float diffXPlaque;
+  private float diffYPlaque;
+  private float diffZPlaque;
+  private float diffPlaque;
+  private bool objectHasMovedPlaque = false;
 
 
-    void Update()
-    {
+  void Update()
+  {
          
-      if (objectIsMoving == true) 
-      {
-        truc.transform.position = Vector3.MoveTowards(truc.transform.position, newPos.transform.position, speedUp * Time.deltaTime); 
-      }
+    if (objectIsMoving == true) 
+    {
+      truc.transform.position = Vector3.MoveTowards(truc.transform.position, newPos.transform.position, speedUp * Time.deltaTime); 
+    }
 
         
-      float diffX = truc.transform.position.x - newPos.transform.position.x; 
-      float diffY = truc.transform.position.y - newPos.transform.position.y; 
-      float diffZ = truc.transform.position.z - newPos.transform.position.z; 
-      float diff = diffX + diffY + diffZ; 
-      if(diff == 0)
-      {
-        objectHasMoved = true; 
-        
-        objectIsMoving2 = true;
-      }
-      if (objectHasMoved == true) 
-      {
-        objectIsMoving = false; 
-      }
+    float diffX = truc.transform.position.x - newPos.transform.position.x; 
+    float diffY = truc.transform.position.y - newPos.transform.position.y; 
+    float diffZ = truc.transform.position.z - newPos.transform.position.z; 
+    float diff = diffX + diffY + diffZ; 
+    if(diff == 0)
+    {
+      objectHasMoved = true; 
+      
+      objectIsMoving2 = true;
+    }
+    if (objectHasMoved == true) 
+    {
+      objectIsMoving = false; 
+    }
 
       //position22222222222222222
       if (objectIsMoving2 == true) 
@@ -105,11 +105,12 @@ public class trigger : MonoBehaviour
       float diffY3 = truc.transform.position.y - newPos3.transform.position.y; 
       float diffZ3 = truc.transform.position.z - newPos3.transform.position.z; 
       float diff3 = diffX3 + diffY3 + diffZ3; 
+      
       if(diff3 == 0)
       {
+
         objectHasMoved3 = true; 
-        Destroy(gameObject);
-        Destroy(truc);
+        
       }
       if (objectHasMoved3 == true) 
       {
@@ -135,25 +136,27 @@ public class trigger : MonoBehaviour
       {
         plaqueIsMoving = false; 
       }
+
+
+      if ( objectHasMoved3 == true)
+      {
+        Destroy(truc);
+      }
     }    
      
-    private void OnTriggerEnter (Collider Plaque)
+  private void OnTriggerEnter (Collider Plaque)
+  {
+    if( objectIsMoving == false)
     {
-      if( objectIsMoving == false)
-      {
-        AudioManager.instance.PlayOneShot(FMODEvent.instance.MonsterPoursuiterSound, positionMob.transform.position);
-      }
-      objectIsMoving = true;
-      Debug.Log("PlaqueDepression");
-      if( plaqueIsMoving == false)
-      {
-        AudioManager.instance.PlayOneShot(FMODEvent.instance.CloseDoorSound, this.transform.position);
-      }
-      plaqueIsMoving = true;
+      AudioManager.instance.PlayOneShot(FMODEvent.instance.MonsterPoursuiterSound, positionMob.transform.position);
     }
+    objectIsMoving = true;
+    Debug.Log("PlaqueDepression");
+    if( plaqueIsMoving == false)
+    {
+      AudioManager.instance.PlayOneShot(FMODEvent.instance.CloseDoorSound, this.transform.position);
+    }
+    plaqueIsMoving = true;
+  }
 
-    void DestroyGameObject()
-    {
-      Destroy(gameObject);
-    }
 }
