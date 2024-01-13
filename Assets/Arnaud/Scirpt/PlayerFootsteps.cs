@@ -1,43 +1,46 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using FMOD.Studio;
+
 
 public class PlayerFootsteps : MonoBehaviour
-{/*
-
-    float footstepSpeed = 0.3f;
+{
+    
+    
 
     public GameObject groundCheck;
-    public float groundDistance = 0.4f;
+    
 
     private enum CURRENT_TERRAIN { STEEL, SNOW, CONCRETE, CARPET};
 
-    public GameObject controller;
 
+    public bool IsGrounded = false;
+    public bool IsWalking = false;
+
+    float timer = 0.0f;
     
 
 
     [SerializeField]
-    float timer = 0.0f;
+    float footstepSpeed = 0.3f;
+    
     private CURRENT_TERRAIN currentTerrain;
 
     private FMOD.Studio.EventInstance footsteps;
 
-    
-
-    private void Awake()
-    {
-        controller = GetComponentInParent<CharacterController>();
-    }
-    
-
+   
     
     private void Update()
     {
+        
+        if(IsGrounded)
+        {
+            Debug.Log("PlayerFootSteps Isgrounded");
+        }
+
         DetermineTerrain();
 
-        if (controller.IsWalking && controller.IsGrounded)
+        if (IsWalking && IsGrounded)
         {
             if (timer > footstepSpeed)
             {
@@ -62,7 +65,7 @@ public class PlayerFootsteps : MonoBehaviour
                 currentTerrain = CURRENT_TERRAIN.STEEL;
                 break;
             }
-            else if (rayhit.transform.gameObject.layer == LayerMask.NameToLayer("snow"))
+            else if (rayhit.transform.gameObject.layer == LayerMask.NameToLayer("Snow"))
             {
                 currentTerrain = CURRENT_TERRAIN.SNOW;
                 break;
@@ -86,26 +89,27 @@ public class PlayerFootsteps : MonoBehaviour
         {
             case CURRENT_TERRAIN.STEEL:
                 PlayFootstep(0);
-
+                break;
             case CURRENT_TERRAIN.SNOW:
                 PlayFootstep(1);
-
+                break;
             case CURRENT_TERRAIN.CONCRETE:
                 PlayFootstep(2);
-            
+                break;
             case CURRENT_TERRAIN.CARPET:
                 PlayFootstep(3);
-
+                break;
         }
     }
 
-    private void PlayFootstep(int terrain)
+     private void PlayFootstep(int terrain)
     {
-        footsteps = FMODUnity.RuntimeManager.CreateInstance("event:/Footsteps");
-        footsteps.setParameterByName("Terrain, terrain");
-        footsteps.set3DAttributes(FMODUnity.RunTimeUtils.To3DAttributes(gameObject));
+        footsteps = FMODUnity.RuntimeManager.CreateInstance("event:/footsteps");
+        footsteps.setParameterByName("Terrain", terrain);
+        footsteps.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(gameObject));
         footsteps.start();
         footsteps.release();
     }
-    */
+    
+    
 }
