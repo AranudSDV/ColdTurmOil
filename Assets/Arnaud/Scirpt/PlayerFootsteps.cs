@@ -1,18 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using FMOD.Studio;
 
 
 public class PlayerFootsteps : MonoBehaviour
 {
     
-    
-
-    public GameObject groundCheck;
-    
-
-    private enum CURRENT_TERRAIN { STEEL, SNOW, CONCRETE, CARPET};
-
+    /*private enum CURRENT_TERRAIN { STEEL, SNOW, CONCRETE, CARPET};
 
     public bool IsGrounded = false;
     public bool IsWalking = false;
@@ -26,7 +21,8 @@ public class PlayerFootsteps : MonoBehaviour
     
     private CURRENT_TERRAIN currentTerrain;
 
-    private FMOD.Studio.EventInstance footsteps;
+    private FMOD.Studio.EventInstance Footsteps;
+    public GameObject player;
 
    
     
@@ -40,11 +36,16 @@ public class PlayerFootsteps : MonoBehaviour
 
         DetermineTerrain();
 
-        if (IsWalking && IsGrounded)
+        if (IsWalking == true && IsGrounded == true)
         {
+            PLAYBACK_STATE playbackState;
+            Footsteps.getPlaybackState(out playbackState);
             if (timer > footstepSpeed)
             {
-                SelectAndPlayFootstep();
+                if(playbackState.Equals(PLAYBACK_STATE.STOPPED))
+                {
+                 SelectAndPlayFootsteps();
+                }
                 timer = 0.0f;
             }
 
@@ -56,7 +57,7 @@ public class PlayerFootsteps : MonoBehaviour
     {
         RaycastHit[] hit;
 
-        hit = Physics.RaycastAll(transform.position, Vector3.down, 5f);
+        hit = Physics.RaycastAll(player.transform.position, Vector3.down, 5f);
 
         foreach (RaycastHit rayhit in hit)
         {
@@ -83,7 +84,7 @@ public class PlayerFootsteps : MonoBehaviour
         }
     }
 
-    public void SelectAndPlayFootstep()
+    public void SelectAndPlayFootsteps()
     {
         switch (currentTerrain)
         {
@@ -104,12 +105,12 @@ public class PlayerFootsteps : MonoBehaviour
 
      private void PlayFootstep(int terrain)
     {
-        footsteps = FMODUnity.RuntimeManager.CreateInstance("event:/footsteps");
-        footsteps.setParameterByName("Terrain", terrain);
-        footsteps.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(gameObject));
-        footsteps.start();
-        footsteps.release();
+        Footsteps = FMODUnity.RuntimeManager.CreateInstance("event:/character/Footsteps");
+        Footsteps.setParameterByName("Terrain", terrain);
+        Footsteps.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(gameObject));
+        Footsteps.start();
+        Footsteps.release();
     }
-    
+    */
     
 }
