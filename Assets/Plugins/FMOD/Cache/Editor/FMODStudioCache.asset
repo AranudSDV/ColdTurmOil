@@ -69,10 +69,10 @@ MonoBehaviour:
   Path: ../../../Desktop/Unearthed_Sound/Unearthed/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638405013679055030
+  lastModified: 638407368884242047
   FileSizes:
   - Name: Desktop
-    Value: 1780
+    Value: 1790
   Exists: 1
 --- !u!114 &-7346868653520789780
 MonoBehaviour:
@@ -116,38 +116,10 @@ MonoBehaviour:
   Path: ../../../Desktop/Unearthed_Sound/Unearthed/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638405013679038146
+  lastModified: 638407368884216966
   FileSizes:
   - Name: Desktop
     Value: 10327648
-  Exists: 1
---- !u!114 &-5232833073694157997
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/char_walking_01/FloorType
-  m_EditorClassIdentifier: 
-  Name: FloorType
-  StudioPath: 
-  Min: 0
-  Max: 3
-  Default: 0
-  ID:
-    data1: 2951111934
-    data2: 874876676
-  Type: 2
-  IsGlobal: 0
-  Labels:
-  - Steel
-  - Snow
-  - Concrete
-  - Carpet
   Exists: 1
 --- !u!114 &-4613802496829378572
 MonoBehaviour:
@@ -333,7 +305,6 @@ MonoBehaviour:
   - {fileID: 1725866958189888076}
   - {fileID: 3558969144380980634}
   - {fileID: 1001297112408576608}
-  - {fileID: 8849248973248297249}
   - {fileID: 8114197512344434126}
   - {fileID: 1152617067772578865}
   - {fileID: 5953719966860367062}
@@ -345,12 +316,13 @@ MonoBehaviour:
   - {fileID: -8557173781921857993}
   - {fileID: -601809688919121596}
   - {fileID: -3363729680415215257}
+  - {fileID: 7224335016238833811}
   EditorParameters: []
   MasterBanks:
   - {fileID: -7073281099961815156}
   StringsBanks:
   - {fileID: -7840616295487783546}
-  cacheTime: 638405013679055030
+  cacheTime: 638407368884242047
   cacheVersion: 131616
 --- !u!114 &1001297112408576608
 MonoBehaviour:
@@ -461,6 +433,34 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 151508
+--- !u!114 &2071463914799427790
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Footsteps/Terrain
+  m_EditorClassIdentifier: 
+  Name: Terrain
+  StudioPath: 
+  Min: 0
+  Max: 3
+  Default: 0
+  ID:
+    data1: 2951111934
+    data2: 874876676
+  Type: 2
+  IsGlobal: 0
+  Labels:
+  - Steel
+  - Snow
+  - Concrete
+  - Carpet
+  Exists: 1
 --- !u!114 &2449298722694249399
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -570,6 +570,34 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 1000
+--- !u!114 &7224335016238833811
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/character/Footsteps
+  m_EditorClassIdentifier: 
+  Path: event:/character/Footsteps
+  Guid:
+    Data1: -222335091
+    Data2: 1176681286
+    Data3: -1434767425
+    Data4: -1842398413
+  Banks:
+  - {fileID: -7073281099961815156}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 2071463914799427790}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 4501
 --- !u!114 &8114197512344434126
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -597,31 +625,3 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 28000
---- !u!114 &8849248973248297249
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/character/char_walking_01
-  m_EditorClassIdentifier: 
-  Path: event:/character/char_walking_01
-  Guid:
-    Data1: -222335091
-    Data2: 1176681286
-    Data3: -1434767425
-    Data4: -1842398413
-  Banks:
-  - {fileID: -7073281099961815156}
-  IsStream: 1
-  Is3D: 1
-  IsOneShot: 0
-  Parameters:
-  - {fileID: -5232833073694157997}
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 4501
