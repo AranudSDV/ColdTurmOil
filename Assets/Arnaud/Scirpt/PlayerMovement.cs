@@ -344,7 +344,6 @@ public class PlayerMovement : MonoBehaviour
         else
         {
             footstepsound = false;
-            Debug.Log("Foot steps false");
             Footsteps.stop(STOP_MODE.ALLOWFADEOUT);
         }
         
