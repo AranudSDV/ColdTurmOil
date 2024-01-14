@@ -14,14 +14,7 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     int correctedPipes = 0;
 
-
-    [SerializeField] private float speedUp = 5f;
-    private float diffX;
-    private float diffY;
-    private float diffZ;
-    private float diff;
-    private bool CardHasMoved = false;
-    private bool CardIsMoving = false;
+ 
 
 
     // Start is called before the first frame update
@@ -47,7 +40,7 @@ public class GameManager : MonoBehaviour
         if(correctedPipes == totalPipes)
         {
             Debug.Log("You win!");
-            CardIsMoving = true;
+            
 
             Card.SetActive(true);
             

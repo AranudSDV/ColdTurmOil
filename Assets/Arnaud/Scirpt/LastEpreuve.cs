@@ -20,6 +20,7 @@ public class LastEpreuve : MonoBehaviour
 
     public Renderer rend;
     public GameObject time;
+    public GameObject sound;
 
 
     
@@ -67,7 +68,7 @@ public class LastEpreuve : MonoBehaviour
             if(porteIsMoving == false)
             {
                 AudioManager.instance.PlayOneShot(FMODEvent.instance.OpenDoorSound, porte.transform.position);
-                AudioManager.instance.PlayOneShot(FMODEvent.instance.AutodestructionSound, this.transform.position);
+                sound.SetActive(true);
             }
 
             porteIsMoving = true;

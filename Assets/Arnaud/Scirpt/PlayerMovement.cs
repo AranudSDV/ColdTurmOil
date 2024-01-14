@@ -7,15 +7,18 @@ using FMOD.Studio;
 public class PlayerMovement : MonoBehaviour
 {
     //son pied
+    
     private enum CURRENT_TERRAIN { STEEL, SNOW, CONCRETE, CARPET};
-    float timer = 0.0f;
+    public float timer = 0.0f;
     [SerializeField]
     float footstepSpeed = 0.3f;
     
     private CURRENT_TERRAIN currentTerrain;
     private FMOD.Studio.EventInstance Footsteps;
     public GameObject player;
+    public bool footstepsound = false;
     //son pied
+    
 
 
     public CharacterController controller;
@@ -36,9 +39,10 @@ public class PlayerMovement : MonoBehaviour
     public LayerMask LecteurBoutton;
     public LayerMask LecteurYellow;
     public LayerMask Pipe;
+  
 
     public Transform groundCheck;
-    public float groundDistance =0.1f;
+    public float groundDistance = 0.1f ;
 
     public LayerMask groundMaskSteel;
     public LayerMask groundMaskSnow;
@@ -102,7 +106,6 @@ public class PlayerMovement : MonoBehaviour
         {
             IsGrounded = true;
             
-            //gameObject.GetComponent<PlayerFootsteps>().IsGrounded = true;
         }
 
         if(velocity.y < 0 && IsGrounded)
@@ -121,12 +124,12 @@ public class PlayerMovement : MonoBehaviour
         {
             IsWalking = true;
             Debug.Log("Player Movement IsWalking");
-            //gameObject.GetComponent<PlayerFootsteps>().IsWalking = true;
+            
         }
         else
         {
             IsWalking = false;
-            //gameObject.GetComponent<PlayerFootsteps>().IsWalking = false;
+            
         }
 
         
@@ -318,31 +321,45 @@ public class PlayerMovement : MonoBehaviour
 
         DetermineTerrain();
 
-        if (IsWalking == true && IsGrounded == true)
+        if (IsGrounded && IsWalking)
         {
+            
             PLAYBACK_STATE playbackState;
             Footsteps.getPlaybackState(out playbackState);
-            if (timer > footstepSpeed)
-            {
+
+            //if (timer > footstepSpeed)
+            //{
                 if(playbackState.Equals(PLAYBACK_STATE.STOPPED))
                 {
                  SelectAndPlayFootsteps();
+                 Debug.Log("playbakc state ");
+                 footstepsound = true;
                 }
-                timer = 0.0f;
-            }
+                //timer = 0.0f;
+            //}
 
-            timer += Time.deltaTime;
+            //timer += Time.deltaTime;
+
         }
+        else
+        {
+            footstepsound = false;
+            Debug.Log("Foot steps false");
+            //Footsteps.stop();
+        }
+        
+        
 
 
 
     }
+    
 
     private void DetermineTerrain()
     {
         RaycastHit[] hit;
 
-        hit = Physics.RaycastAll(player.transform.position, Vector3.down, 5f);
+        hit = Physics.RaycastAll(this.transform.position, Vector3.down, 5f);
 
         foreach (RaycastHit rayhit in hit)
         {
@@ -374,53 +391,34 @@ public class PlayerMovement : MonoBehaviour
         switch (currentTerrain)
         {
             case CURRENT_TERRAIN.STEEL:
+
                 PlayFootstep(0);
                 break;
+                
             case CURRENT_TERRAIN.SNOW:
+
                 PlayFootstep(1);
                 break;
+                
             case CURRENT_TERRAIN.CONCRETE:
                 PlayFootstep(2);
                 break;
+                
             case CURRENT_TERRAIN.CARPET:
                 PlayFootstep(3);
                 break;
+                
         }
     }
 
-     private void PlayFootstep(int terrain)
+    private void PlayFootstep(int terrain)
     {
         Footsteps = FMODUnity.RuntimeManager.CreateInstance("event:/character/Footsteps");
         Footsteps.setParameterByName("Terrain", terrain);
-        Footsteps.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(gameObject));
+        FMODUnity.RuntimeManager.AttachInstanceToGameObject(Footsteps, transform, false);
         Footsteps.start();
         Footsteps.release();
+        
     }
 
-    /*private void UpdateSound()
-    {
-        if (Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0 )
-        {
-            if(isGrounded)
-            {
-            PLAYBACK_STATE playbackState;
-            playerFootsteps.getPlaybackState(out playbackState);
-            if(playbackState.Equals(PLAYBACK_STATE.STOPPED))
-            {
-                playerFootsteps.start();
-            }
-            }
-        }
-        else
-        {
-            playerFootsteps.stop(STOP_MODE.ALLOWFADEOUT);
-        }
-
-    }
-    */
-    
-
-
-    
-    
 }

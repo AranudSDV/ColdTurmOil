@@ -112,5 +112,28 @@ public class PlayerFootsteps : MonoBehaviour
         Footsteps.release();
     }
     */
+
+    /*private void UpdateSound()
+    {
+        if (Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0 )
+        {
+            if(isGrounded)
+            {
+            PLAYBACK_STATE playbackState;
+            playerFootsteps.getPlaybackState(out playbackState);
+            if(playbackState.Equals(PLAYBACK_STATE.STOPPED))
+            {
+                playerFootsteps.start();
+            }
+            }
+        }
+        else
+        {
+            playerFootsteps.stop(STOP_MODE.ALLOWFADEOUT);
+        }
+        
+    }
+
+    */
     
 }
