@@ -104,14 +104,17 @@ public class PlayerMovement : MonoBehaviour
 
         if(isGroundedCarpet || isGroundedConcrete || isGroundedSnow || isGroundedSteel)
         {
-            IsGrounded = true;
-            
+            IsGrounded = true;   
+        }
+        else
+        {
+            IsGrounded = false;
         }
 
-        if(velocity.y < 0 && IsGrounded)
+        if(IsGrounded && velocity.y < 0)
         {
             
-            velocity.y = -2f;
+            velocity.y = -2;
             
         }
 
@@ -119,18 +122,6 @@ public class PlayerMovement : MonoBehaviour
         float z = Input.GetAxis("Vertical");
 
         Vector3 move = transform.right * x + transform.forward * z;
-
-        if (Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0 )
-        {
-            IsWalking = true;
-            Debug.Log("Player Movement IsWalking");
-            
-        }
-        else
-        {
-            IsWalking = false;
-            
-        }
 
         
 
@@ -150,6 +141,17 @@ public class PlayerMovement : MonoBehaviour
         isCrouching = false;
 
         isBlocked = Physics.CheckSphere(headCheck.position, headDistance, headMask);
+
+        if (Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0 )
+        {
+            IsWalking = true;
+            //Debug.Log("Player Movement IsWalking");
+            
+        }
+        else
+        {
+            IsWalking = false;
+        }
 
         //Crouch
         if(Input.GetKey(KeyCode.F))
@@ -310,9 +312,7 @@ public class PlayerMovement : MonoBehaviour
             controller.Move(move * sprintSpeed * Time.deltaTime);
         }
 
-        controller.Move(move * speed * Time.deltaTime);
-
-        //son pied
+        controller.Move(move * crouchSpeed * Time.deltaTime);
 
         if(IsGrounded)
         {
@@ -345,7 +345,7 @@ public class PlayerMovement : MonoBehaviour
         {
             footstepsound = false;
             Debug.Log("Foot steps false");
-            //Footsteps.stop();
+            Footsteps.stop(STOP_MODE.ALLOWFADEOUT);
         }
         
         
