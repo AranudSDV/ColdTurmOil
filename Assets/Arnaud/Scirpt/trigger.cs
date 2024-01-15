@@ -46,14 +46,19 @@ public class trigger : MonoBehaviour
   private float diffZPlaque;
   private float diffPlaque;
   private bool objectHasMovedPlaque = false;
+  public GameObject Door;
 
 
   void Update()
   {
+
+    
          
     if (objectIsMoving == true) 
     {
       truc.transform.position = Vector3.MoveTowards(truc.transform.position, newPos.transform.position, speedUp * Time.deltaTime); 
+
+      Door.transform.Translate (Vector3.up * Time.deltaTime * 5);
     }
 
         
