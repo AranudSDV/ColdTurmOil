@@ -69,10 +69,10 @@ MonoBehaviour:
   Path: ../../../Desktop/Unearthed_Sound/Unearthed/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638410011842180364
+  lastModified: 638410106783762303
   FileSizes:
   - Name: Desktop
-    Value: 1780
+    Value: 1782
   Exists: 1
 --- !u!114 &-7346868653520789780
 MonoBehaviour:
@@ -116,10 +116,10 @@ MonoBehaviour:
   Path: ../../../Desktop/Unearthed_Sound/Unearthed/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638410011842152793
+  lastModified: 638410106783747271
   FileSizes:
   - Name: Desktop
-    Value: 10327648
+    Value: 10327680
   Exists: 1
 --- !u!114 &-6492761013234813360
 MonoBehaviour:
@@ -321,9 +321,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/AmbiantEnviro/IsBlizzard
+  m_Name: parameter:/AmbiantEnviro/AmbiantEnviro
   m_EditorClassIdentifier: 
-  Name: IsBlizzard
+  Name: AmbiantEnviro
   StudioPath: 
   Min: 0
   Max: 3
@@ -378,7 +378,7 @@ MonoBehaviour:
   - {fileID: -7073281099961815156}
   StringsBanks:
   - {fileID: -7840616295487783546}
-  cacheTime: 638410011842180364
+  cacheTime: 638410106783762303
   cacheVersion: 131616
 --- !u!114 &1152617067772578865
 MonoBehaviour:

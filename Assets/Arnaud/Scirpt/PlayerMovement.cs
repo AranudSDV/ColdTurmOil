@@ -415,17 +415,17 @@ public class PlayerMovement : MonoBehaviour
             case CURRENT_TERRAIN.SNOW:
 
                 PlayFootstep(1);
-                PlayAmbiantEnviro(0);
+                //PlayAmbiantEnviro(0);
                 break;
                 
             case CURRENT_TERRAIN.CONCRETE:
                 PlayFootstep(2);
-                PlayAmbiantEnviro(3);
+                //PlayAmbiantEnviro(3);
                 break;
                 
             case CURRENT_TERRAIN.CARPET:
                 PlayFootstep(3);
-                PlayAmbiantEnviro(2);
+                //PlayAmbiantEnviro(2);
                 break;
                 
         }
@@ -442,14 +442,16 @@ public class PlayerMovement : MonoBehaviour
     }
  
 
-    private void PlayAmbiantEnviro(int terrain)
+    /*private void PlayAmbiantEnviro(int terrain)
     {
         AmbiantEnviro = FMODUnity.RuntimeManager.CreateInstance("event:/character/AmbiantEnviro");
-        AmbiantEnviro.setParameterByName("Terrain", terrain);
+        AmbiantEnviro.setParameterByName("IsBlizzard", terrain);
         FMODUnity.RuntimeManager.AttachInstanceToGameObject(AmbiantEnviro, transform, false);
         AmbiantEnviro.start();
         AmbiantEnviro.release();
         
     }
+    */
+    
     
 }
