@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Monster
   - Blizzard
+  - batiment tuto
   layers:
   - Default
   - TransparentFX

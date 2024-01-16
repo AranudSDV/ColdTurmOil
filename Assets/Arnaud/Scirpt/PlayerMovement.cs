@@ -15,8 +15,9 @@ public class PlayerMovement : MonoBehaviour
     
     private CURRENT_TERRAIN currentTerrain;
     private FMOD.Studio.EventInstance Footsteps;
+    private FMOD.Studio.EventInstance AmbiantEnviro;
     public GameObject player;
-    public bool footstepsound = false;
+    
     //son pied
     
 
@@ -81,8 +82,7 @@ public class PlayerMovement : MonoBehaviour
     public Door door;
     public PorteForage porteForage;
 
-    //audio
-    //private EventInstance footsteps;
+    
     
     private void Start()
     {
@@ -334,8 +334,9 @@ public class PlayerMovement : MonoBehaviour
                 if(playbackState.Equals(PLAYBACK_STATE.STOPPED))
                 {
                  SelectAndPlayFootsteps();
+                 //SelectAndPlayEnviro();
                  Debug.Log("playbakc state ");
-                 footstepsound = true;
+                 
                 }
                 //timer = 0.0f;
             //}
@@ -345,9 +346,24 @@ public class PlayerMovement : MonoBehaviour
         }
         else
         {
-            footstepsound = false;
+            
             Footsteps.stop(STOP_MODE.ALLOWFADEOUT);
+            //AmbiantEnviro.stop(STOP_MODE.ALLOWFADEOUT);
         }
+
+        /*AmbiantEnviro.getPlaybackState(out playbackState);
+
+        if(playbackState.Equals(PLAYBACK_STATE.STOPPED))
+        {      
+            SelectAndPlayEnviro();      
+        }
+       else
+        {
+            AmbiantEnviro.stop(STOP_MODE.ALLOWFADEOUT);
+        }
+        */
+
+
         
         
 
@@ -399,14 +415,17 @@ public class PlayerMovement : MonoBehaviour
             case CURRENT_TERRAIN.SNOW:
 
                 PlayFootstep(1);
+                PlayAmbiantEnviro(0);
                 break;
                 
             case CURRENT_TERRAIN.CONCRETE:
                 PlayFootstep(2);
+                PlayAmbiantEnviro(3);
                 break;
                 
             case CURRENT_TERRAIN.CARPET:
                 PlayFootstep(3);
+                PlayAmbiantEnviro(2);
                 break;
                 
         }
@@ -421,5 +440,16 @@ public class PlayerMovement : MonoBehaviour
         Footsteps.release();
         
     }
+ 
 
+    private void PlayAmbiantEnviro(int terrain)
+    {
+        AmbiantEnviro = FMODUnity.RuntimeManager.CreateInstance("event:/character/AmbiantEnviro");
+        AmbiantEnviro.setParameterByName("Terrain", terrain);
+        FMODUnity.RuntimeManager.AttachInstanceToGameObject(AmbiantEnviro, transform, false);
+        AmbiantEnviro.start();
+        AmbiantEnviro.release();
+        
+    }
+    
 }

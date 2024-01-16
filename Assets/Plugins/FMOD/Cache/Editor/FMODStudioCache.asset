@@ -69,10 +69,10 @@ MonoBehaviour:
   Path: ../../../Desktop/Unearthed_Sound/Unearthed/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638407368884242047
+  lastModified: 638410011842180364
   FileSizes:
   - Name: Desktop
-    Value: 1790
+    Value: 1780
   Exists: 1
 --- !u!114 &-7346868653520789780
 MonoBehaviour:
@@ -116,11 +116,39 @@ MonoBehaviour:
   Path: ../../../Desktop/Unearthed_Sound/Unearthed/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638407368884216966
+  lastModified: 638410011842152793
   FileSizes:
   - Name: Desktop
     Value: 10327648
   Exists: 1
+--- !u!114 &-6492761013234813360
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Ambient/AmbiantEnviro
+  m_EditorClassIdentifier: 
+  Path: event:/Ambient/AmbiantEnviro
+  Guid:
+    Data1: 23339370
+    Data2: 1340239999
+    Data3: -1991415423
+    Data4: -1433846999
+  Banks:
+  - {fileID: -7073281099961815156}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters:
+  - {fileID: -332284796307279873}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 29587
 --- !u!114 &-4613802496829378572
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -283,6 +311,34 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 1000
+--- !u!114 &-332284796307279873
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/AmbiantEnviro/IsBlizzard
+  m_EditorClassIdentifier: 
+  Name: IsBlizzard
+  StudioPath: 
+  Min: 0
+  Max: 3
+  Default: 0
+  ID:
+    data1: 3263795548
+    data2: 4232496543
+  Type: 2
+  IsGlobal: 0
+  Labels:
+  - Outside
+  - OutsideBlizzard
+  - InsideTuto
+  - InsideMine
+  Exists: 1
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -304,7 +360,6 @@ MonoBehaviour:
   - {fileID: -8458282259219267790}
   - {fileID: 1725866958189888076}
   - {fileID: 3558969144380980634}
-  - {fileID: 1001297112408576608}
   - {fileID: 8114197512344434126}
   - {fileID: 1152617067772578865}
   - {fileID: 5953719966860367062}
@@ -317,41 +372,14 @@ MonoBehaviour:
   - {fileID: -601809688919121596}
   - {fileID: -3363729680415215257}
   - {fileID: 7224335016238833811}
+  - {fileID: -6492761013234813360}
   EditorParameters: []
   MasterBanks:
   - {fileID: -7073281099961815156}
   StringsBanks:
   - {fileID: -7840616295487783546}
-  cacheTime: 638407368884242047
+  cacheTime: 638410011842180364
   cacheVersion: 131616
---- !u!114 &1001297112408576608
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Ambient/ambient_environement_01
-  m_EditorClassIdentifier: 
-  Path: event:/Ambient/ambient_environement_01
-  Guid:
-    Data1: 23339370
-    Data2: 1340239999
-    Data3: -1991415423
-    Data4: -1433846999
-  Banks:
-  - {fileID: -7073281099961815156}
-  IsStream: 1
-  Is3D: 1
-  IsOneShot: 0
-  Parameters:
-  - {fileID: 3733276399869893411}
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 29587
 --- !u!114 &1152617067772578865
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -515,34 +543,6 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 1031
---- !u!114 &3733276399869893411
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/ambient_environement_01/IsBlizzard
-  m_EditorClassIdentifier: 
-  Name: IsBlizzard
-  StudioPath: 
-  Min: 0
-  Max: 3
-  Default: 0
-  ID:
-    data1: 3263795548
-    data2: 4232496543
-  Type: 2
-  IsGlobal: 0
-  Labels:
-  - Outside
-  - OutsideBlizzard
-  - InsideTuto
-  - InsideMine
-  Exists: 1
 --- !u!114 &5953719966860367062
 MonoBehaviour:
   m_ObjectHideFlags: 0

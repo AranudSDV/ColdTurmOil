@@ -9,6 +9,7 @@ public class trigger : MonoBehaviour
   public GameObject newPos;
   public GameObject trappe;
   public GameObject positionMob;
+  public GameObject SoundMonster;
     
   public bool objectIsMoving = false;
   public bool playerinzone;
@@ -59,6 +60,8 @@ public class trigger : MonoBehaviour
       truc.transform.position = Vector3.MoveTowards(truc.transform.position, newPos.transform.position, speedUp * Time.deltaTime); 
 
       Door.transform.Translate (Vector3.up * Time.deltaTime * 5);
+
+      SoundMonster.SetActive(true);
     }
 
         
@@ -151,10 +154,11 @@ public class trigger : MonoBehaviour
      
   private void OnTriggerEnter (Collider Plaque)
   {
-    if( objectIsMoving == false)
+    /*if( objectIsMoving == false)
     {
       AudioManager.instance.PlayOneShot(FMODEvent.instance.MonsterPoursuiterSound, positionMob.transform.position);
     }
+    */
     objectIsMoving = true;
     Debug.Log("PlaqueDepression");
     if( plaqueIsMoving == false)

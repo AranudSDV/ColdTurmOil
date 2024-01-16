@@ -84,8 +84,8 @@ public class CodeLock : MonoBehaviour
 
         if (doorIsOpening == true)
         {
-            Door.transform.Translate (Vector3.up * Time.deltaTime * 5);
-            Door2.transform.Translate (Vector3.up * Time.deltaTime * 5);
+            Door.transform.Translate (Vector3.forward * Time.deltaTime * 5);
+            Door2.transform.Translate (Vector3.forward * Time.deltaTime * 5);
         }
 
         if (Door.transform.position.y > 7f)
