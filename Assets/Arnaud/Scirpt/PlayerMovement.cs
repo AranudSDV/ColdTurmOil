@@ -318,7 +318,7 @@ public class PlayerMovement : MonoBehaviour
 
         if(IsGrounded)
         {
-            Debug.Log("PlayerFootSteps Isgrounded");
+            
         }
 
         DetermineTerrain();
@@ -335,7 +335,7 @@ public class PlayerMovement : MonoBehaviour
                 {
                  SelectAndPlayFootsteps();
                  //SelectAndPlayEnviro();
-                 Debug.Log("playbakc state ");
+                 
                  
                 }
                 //timer = 0.0f;

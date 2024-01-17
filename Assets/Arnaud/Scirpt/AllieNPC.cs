@@ -12,7 +12,8 @@ public class AllieNPC : MonoBehaviour
     public bool NPC2IsMoving = false;
     public bool NPC1IsRotating = false;
     public bool NPC2IsRotating = false;
-    public bool playerinzone;
+    public bool PlayerInTrigger;
+    public Collider TriggerDepart;
     
 
     [SerializeField] private float speedUp = 5f;
@@ -32,7 +33,7 @@ public class AllieNPC : MonoBehaviour
     private bool NPC2HasMoved = false;
     
 
-
+    
     
 
 
@@ -45,7 +46,7 @@ public class AllieNPC : MonoBehaviour
     
     void Update()
     {
-        if(NPC2IsRotating = true)
+        if(NPC1IsRotating = true)
         {
             NPC1.transform.rotation = Quaternion.Lerp(NPC1.transform.rotation, Quaternion.Euler(0f, 100f, 0), Time.deltaTime);
         }
@@ -74,6 +75,10 @@ public class AllieNPC : MonoBehaviour
         }
 
         //NPC2
+         if(NPC2IsRotating = true)
+        {
+            NPC2.transform.rotation = Quaternion.Lerp(NPC2.transform.rotation, Quaternion.Euler(0f, 100f, 0), Time.deltaTime);
+        }
 
         if (NPC2IsMoving == true) 
         {
@@ -98,4 +103,6 @@ public class AllieNPC : MonoBehaviour
             NPC2IsMoving = false; 
         }
     }
+
+    
 }

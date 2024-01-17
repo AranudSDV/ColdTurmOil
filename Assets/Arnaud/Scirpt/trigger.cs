@@ -154,11 +154,7 @@ public class trigger : MonoBehaviour
      
   private void OnTriggerEnter (Collider Plaque)
   {
-    /*if( objectIsMoving == false)
-    {
-      AudioManager.instance.PlayOneShot(FMODEvent.instance.MonsterPoursuiterSound, positionMob.transform.position);
-    }
-    */
+    
     objectIsMoving = true;
     Debug.Log("PlaqueDepression");
     if( plaqueIsMoving == false)
