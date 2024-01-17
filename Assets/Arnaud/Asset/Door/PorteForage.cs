@@ -11,6 +11,7 @@ public class PorteForage : MonoBehaviour
     public GameObject songPosition;
     public GameObject fxElectricite;
     public GameObject SoundFX;
+    public GameObject FXPorte;
 
     public bool plateformIsMoving = false;
     public bool plateform2IsMoving = false;
@@ -51,6 +52,7 @@ public class PorteForage : MonoBehaviour
             rend.enabled = true;
             Destroy(fxElectricite);
             Destroy(SoundFX);
+            FXPorte.SetActive(true);
 
         }
 

@@ -69,7 +69,7 @@ MonoBehaviour:
   Path: ../../../Desktop/Unearthed_Sound/Unearthed/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638410106783762303
+  lastModified: 638410789871954810
   FileSizes:
   - Name: Desktop
     Value: 1782
@@ -116,7 +116,7 @@ MonoBehaviour:
   Path: ../../../Desktop/Unearthed_Sound/Unearthed/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638410106783747271
+  lastModified: 638410789871934814
   FileSizes:
   - Name: Desktop
     Value: 10327680
@@ -378,7 +378,7 @@ MonoBehaviour:
   - {fileID: -7073281099961815156}
   StringsBanks:
   - {fileID: -7840616295487783546}
-  cacheTime: 638410106783762303
+  cacheTime: 638410789871954810
   cacheVersion: 131616
 --- !u!114 &1152617067772578865
 MonoBehaviour:

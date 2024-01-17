@@ -18,7 +18,12 @@ public class PlayerMovement : MonoBehaviour
     private FMOD.Studio.EventInstance AmbiantEnviro;
     public GameObject player;
     
-    //son pied
+    //son Ambiant
+
+    public GameObject SonOutside;
+    public GameObject SonTuto;
+    public GameObject SonMine;
+    
     
 
 
@@ -49,6 +54,7 @@ public class PlayerMovement : MonoBehaviour
     public LayerMask groundMaskSnow;
     public LayerMask groundMaskConcrete;
     public LayerMask groundMaskCarpet;
+    
 
     public bool IsWalking = false;
     public bool isGroundedSteel = false;
@@ -86,8 +92,9 @@ public class PlayerMovement : MonoBehaviour
     
     private void Start()
     {
-        
-
+        SonOutside.SetActive(false);
+        SonTuto.SetActive(false);
+        SonMine.SetActive(false);
     }
 
     
@@ -101,6 +108,33 @@ public class PlayerMovement : MonoBehaviour
         isGroundedSnow = Physics.CheckSphere(groundCheck.position, groundDistance, groundMaskSnow);
         isGroundedConcrete = Physics.CheckSphere(groundCheck.position, groundDistance, groundMaskConcrete);
         isGroundedCarpet = Physics.CheckSphere(groundCheck.position, groundDistance, groundMaskCarpet);
+
+        if(isGroundedSnow)
+        {
+            SonOutside.SetActive(true);
+        }
+        else
+        {
+            SonOutside.SetActive(false);
+        }
+
+        if(isGroundedCarpet)
+        {
+            SonTuto.SetActive(true);
+        }
+        else
+        {
+            SonTuto.SetActive(false);
+        }
+
+        if(isGroundedConcrete)
+        {
+            SonMine.SetActive(true);
+        }
+        else
+        {
+            SonMine.SetActive(false);
+        }
 
         if(isGroundedCarpet || isGroundedConcrete || isGroundedSnow || isGroundedSteel)
         {
