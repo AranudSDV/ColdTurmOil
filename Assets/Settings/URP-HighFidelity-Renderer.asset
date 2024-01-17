@@ -148,7 +148,7 @@ MonoBehaviour:
   - {fileID: -373856770685352503}
   - {fileID: 582064991681412432}
   - {fileID: -9082228198278704265}
-  m_RendererFeatureMap: adc0de57c6d2eee5
+  m_RendererFeatureMap: adc0de57c6d2eee5d7c183d6dbd31385050a2e971a706807
   m_UseNativeRenderPass: 0
   postProcessData: {fileID: 11400000, guid: 41439944d30ece34e96484bdb6645b55, type: 2}
   xrSystemData: {fileID: 11400000, guid: 60e1133243b97e347b653163a8c01b64, type: 2}
@@ -220,7 +220,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97a529de71a3723409dc5bcc5e30cf8c, type: 3}
   m_Name: '[SCPE] ScanlinesRenderer'
   m_EditorClassIdentifier: 
-  m_Active: 1
+  m_Active: 0
   settings:
     executionOrder: 0
     alwaysEnable: 0
