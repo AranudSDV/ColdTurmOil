@@ -56,7 +56,7 @@ Material:
     m_Ints: []
     m_Floats:
     - _GlitchStr: 7.55
-    - _NoiseAmount: 29.43
+    - _NoiseAmount: 339.5
     - _QueueControl: 0
     - _QueueOffset: 0
     - _ScanlinesStr: 4.2
