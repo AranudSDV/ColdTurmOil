@@ -8,6 +8,8 @@ TagManager:
   - Blizzard
   - batiment tuto
   - Mine
+  - Exterieur
+  - Tuto
   layers:
   - Default
   - TransparentFX

@@ -64,11 +64,6 @@ public class PlayerMovement : MonoBehaviour
     public LayerMask groundMaskSnow;
     public LayerMask groundMaskConcrete;
     public LayerMask groundMaskCarpet;
-
-
-    public string tagMineName;
-    public string tagTutoName;
-    public string tagExterieurName;
     
 
     public bool IsWalking = false;
@@ -123,55 +118,48 @@ public class PlayerMovement : MonoBehaviour
     {
 
         RaycastHit hitTag;
-        
-
-       //UpdateSound();
-       
 
         isGroundedSteel = Physics.CheckSphere(groundCheck.position, groundDistance, groundMaskSteel);
         isGroundedSnow = Physics.CheckSphere(groundCheck.position, groundDistance, groundMaskSnow);
         isGroundedConcrete = Physics.CheckSphere(groundCheck.position, groundDistance, groundMaskConcrete);
         isGroundedCarpet = Physics.CheckSphere(groundCheck.position, groundDistance, groundMaskCarpet);
 
-        //isOnMine = Physics.CheckSphere(groundCheck.position, LocationDistance, tagMineName);
 
-        //if (Physics.Raycast(icamera.transform.position, icamera.transform.TransformDirection(Vector3.forward), out hit, rangePickUp, LecteurBoutton))
-
-
-        /*if (Physics.Raycast(groundCheck.transform.position, transform.TransformDirection(Vector3.down), out HitTag, LocationDistance, tagMineName))
-
-        if(Physics.Raycast (groundCheck.position, down, LocationDistance) && hitTag.transform.gameObject.tag == "Exterieur")
+        if (Physics.Raycast(groundCheck.position, transform.TransformDirection(Vector3.down), out hitTag, LocationDistance))
         {
-            Debug.Log("RAYCAST PLAYERMOUVE FOR SONAMBIANCE TAGMINE");
-        }
-        */
-
-
-        if(isGroundedSnow)
-        {
-            SonOutside.SetActive(true);
-        }
-        else
-        {
-            SonOutside.SetActive(false);
+            if(hitTag.transform.gameObject.tag == "Exterieur")
+            {
+                SonOutside.SetActive(true);
+                Debug.Log("RAYCAST PLAYERMOUVE FOR SONAMBIANCE TAGMINE");
+            }
+            else
+            {
+                SonOutside.SetActive(false);
+            }
         }
 
-        if(isGroundedCarpet)
+        if (Physics.Raycast(groundCheck.position, transform.TransformDirection(Vector3.down), out hitTag, LocationDistance))
         {
-            SonTuto.SetActive(true);
-        }
-        else
-        {
-            SonTuto.SetActive(false);
+            if(hitTag.transform.gameObject.tag == "Tuto")
+            {
+                SonTuto.SetActive(true);
+            }
+            else
+            {
+                SonTuto.SetActive(false);
+            }
         }
 
-        if(isGroundedConcrete)
+        if (Physics.Raycast(groundCheck.position, transform.TransformDirection(Vector3.down), out hitTag, LocationDistance))
         {
-            SonMine.SetActive(true);
-        }
-        else
-        {
-            SonMine.SetActive(false);
+            if(hitTag.transform.gameObject.tag == "Mine")
+            {
+                SonMine.SetActive(true);
+            }
+            else
+            {
+                SonMine.SetActive(false);
+            }
         }
 
         if(isGroundedCarpet || isGroundedConcrete || isGroundedSnow || isGroundedSteel)

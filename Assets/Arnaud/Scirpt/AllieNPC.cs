@@ -14,6 +14,7 @@ public class AllieNPC : MonoBehaviour
     public bool NPC2IsRotating = false;
     public bool PlayerInTrigger;
     public Collider TriggerDepart;
+    public GameObject VoixNPC;
     
 
     [SerializeField] private float speedUp = 5f;
@@ -100,6 +101,7 @@ public class AllieNPC : MonoBehaviour
         {
             NPC2HasMoved = true;
             NPC2.GetComponent<animationsoldier>().Animation = false;
+            VoixNPC.SetActive(true);
             
         }
 
