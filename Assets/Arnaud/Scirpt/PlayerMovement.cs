@@ -11,7 +11,7 @@ public class PlayerMovement : MonoBehaviour
     private enum CURRENT_TERRAIN { STEEL, SNOW, CONCRETE, CARPET};
     public float timer = 0.0f;
     [SerializeField]
-    float footstepSpeed = 0.3f;
+    //float footstepSpeed = 0.3f;
     
     private CURRENT_TERRAIN currentTerrain;
     private FMOD.Studio.EventInstance Footsteps;
@@ -45,6 +45,10 @@ public class PlayerMovement : MonoBehaviour
     public LayerMask LecteurBoutton;
     public LayerMask LecteurYellow;
     public LayerMask Pipe;
+    public LayerMask postit;
+    public LayerMask postit2;
+    public LayerMask postit3;
+    public LayerMask postit4;
   
 
     public Transform groundCheck;
@@ -77,14 +81,17 @@ public class PlayerMovement : MonoBehaviour
 
     private bool rayHit3;
     private bool rayHitPipe;
+    private bool rayHitPostit;
     
 
     Vector3 velocity;
 
     public TextMeshProUGUI textPickup;
+    public TextMeshProUGUI TextePostit;
+    public TextMeshProUGUI TextePostit2;
+    public TextMeshProUGUI TextePostit3;
+    public TextMeshProUGUI TextePostit4;
 
-
-    public BouttonDoor bouttonDoor;
     public Door door;
     public PorteForage porteForage;
 
@@ -312,6 +319,7 @@ public class PlayerMovement : MonoBehaviour
            if(Input.GetMouseButtonDown(0))
            {
              hit.transform.GetComponent<PorteForage>().rayHit2 = true;
+             Debug.Log("Script player porte forage");
            }
 
            else
@@ -338,9 +346,41 @@ public class PlayerMovement : MonoBehaviour
            
 
         }  
-            
-        
-        
+
+        if (Physics.Raycast(icamera.transform.position, icamera.transform.TransformDirection(Vector3.forward), out hit, rangePickUp, postit))
+        {
+            TextePostit.text = "Le premier chiffre du code est 3"; 
+        }
+        else
+        {
+            TextePostit.text = "";
+        }
+
+        if (Physics.Raycast(icamera.transform.position, icamera.transform.TransformDirection(Vector3.forward), out hit, rangePickUp, postit2))
+        {
+            TextePostit2.text = "Le Deuxieme chiffre du code est 6"; 
+        }
+        else
+        {
+            TextePostit2.text = "";
+
+        }if (Physics.Raycast(icamera.transform.position, icamera.transform.TransformDirection(Vector3.forward), out hit, rangePickUp, postit3))
+        {
+            TextePostit3.text = "Le Troisieme chiffre du code est 9"; 
+        }
+        else
+        {
+            TextePostit3.text = "";
+        }
+
+        if (Physics.Raycast(icamera.transform.position, icamera.transform.TransformDirection(Vector3.forward), out hit, rangePickUp, postit4))
+        {
+            TextePostit4.text = "J'ai laisse 3 postits avec les chiffres qui compose le code dans le stocakge et le laboratoire"; 
+        }
+        else
+        {
+            TextePostit4.text = "";
+        }
         
 
         if(Input.GetKey(KeyCode.LeftShift))
@@ -350,10 +390,6 @@ public class PlayerMovement : MonoBehaviour
 
         controller.Move(move * crouchSpeed * Time.deltaTime);
 
-        if(IsGrounded)
-        {
-            
-        }
 
         DetermineTerrain();
 

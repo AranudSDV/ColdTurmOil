@@ -102,8 +102,9 @@ public class PorteForage : MonoBehaviour
         
         }
 
-        if(Inventory.instance.HasObject("Manivelle") == true && Input.GetMouseButtonDown(0) && rayHit2 == true)
+        if(Inventory.instance.HasObject("Manivelle") == true  && rayHit2 == true)
             {
+                //Debug.Log("Script Porte Forage rayhit ");
                 if(plateformIsMoving == false && plateform2IsMoving == false)
                 {
                     AudioManager.instance.PlayOneShot(FMODEvent.instance.OpenDoorForageSound, songPosition.transform.position);
@@ -112,8 +113,14 @@ public class PorteForage : MonoBehaviour
                 plateformIsMoving = true;
                 plateform2IsMoving = true;
                 
-                Debug.Log("scitp porte marche");
+                
             }
+
+
+        //if(rayHit2 == true)
+        //{
+        //    Debug.Log("Script Porte Forage rayhit2 true ");
+        //}
     }
-    // 
+    
 }

@@ -31,6 +31,8 @@ public class AllieNPC : MonoBehaviour
     private float diffZNPC2;
     private float diffNPC2;
     private bool NPC2HasMoved = false;
+
+    public GameObject TexteNpc;
     
 
     
@@ -46,7 +48,7 @@ public class AllieNPC : MonoBehaviour
     
     void Update()
     {
-        if(NPC1IsRotating = true)
+        if(NPC1IsRotating == true)
         {
             NPC1.transform.rotation = Quaternion.Lerp(NPC1.transform.rotation, Quaternion.Euler(0f, 100f, 0), Time.deltaTime);
         }
@@ -66,6 +68,8 @@ public class AllieNPC : MonoBehaviour
         {
             NPC1HasMoved = true;
             NPC1.GetComponent<animationsoldier>().Animation = false;
+
+
              
         }
 
@@ -75,7 +79,7 @@ public class AllieNPC : MonoBehaviour
         }
 
         //NPC2
-         if(NPC2IsRotating = true)
+         if(NPC2IsRotating == true)
         {
             NPC2.transform.rotation = Quaternion.Lerp(NPC2.transform.rotation, Quaternion.Euler(0f, 100f, 0), Time.deltaTime);
         }
@@ -96,12 +100,21 @@ public class AllieNPC : MonoBehaviour
         {
             NPC2HasMoved = true;
             NPC2.GetComponent<animationsoldier>().Animation = false;
+            
         }
 
         if (NPC2HasMoved == true) 
         {
             NPC2IsMoving = false; 
+            StartCoroutine(TexteNPC());
         }
+    }
+
+    IEnumerator TexteNPC()
+    {
+        TexteNpc.SetActive(true);
+        yield return new WaitForSeconds(6);
+         Destroy(TexteNpc);
     }
 
     

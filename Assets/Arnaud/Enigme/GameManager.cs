@@ -8,19 +8,21 @@ public class GameManager : MonoBehaviour
     public GameObject PipesHolder;
     public GameObject[] Pipes;
     public GameObject Card;
+    
+    public bool Cardisok = false;
+    
 
     [SerializeField]
     int totalPipes = 0;
     [SerializeField]
     int correctedPipes = 0;
 
- 
+    
 
 
     // Start is called before the first frame update
     void Start()
     {
-        
         //totalPipes = PipesHolder.transform.childCount;
 
         Pipes = new GameObject[totalPipes];
@@ -40,9 +42,8 @@ public class GameManager : MonoBehaviour
         if(correctedPipes == totalPipes)
         {
             Debug.Log("You win!");
-            
 
-            Card.SetActive(true);
+            Card.GetComponent<Yellowcard>().cardisok = true;
             
         }
     }

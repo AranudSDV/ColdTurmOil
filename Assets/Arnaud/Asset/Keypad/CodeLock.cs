@@ -18,6 +18,7 @@ public class CodeLock : MonoBehaviour
 
     public TextMeshProUGUI TextCode;
     public Image imageBack;
+    public Image imageBackWin;
     public bool doorIsOpening;
 
     
@@ -26,7 +27,7 @@ public class CodeLock : MonoBehaviour
     {
         codeLength = code.Length;
         imageBack.color = new Color(0f, 0f, 0f, 0f);
-
+        imageBackWin.color = new Color(0f, 0f, 0f, 0f);
         
     }
 
@@ -38,6 +39,7 @@ public class CodeLock : MonoBehaviour
         if(attemptedCode == code)
         {
             doorIsOpening = true;
+            StartCoroutine(WinImage());
         }
 
         if(attemptedCode != code)
@@ -53,6 +55,13 @@ public class CodeLock : MonoBehaviour
         imageBack.color = new Color(1f, 0f, 0f, 0.5f);
         yield return new WaitForSeconds(4);
          imageBack.color = new Color(0f, 0f, 0f, 0f);
+    }
+
+    IEnumerator WinImage()
+    {
+        imageBackWin.color = new Color(0f, 1f, 0f, 0.5f);
+        yield return new WaitForSeconds(4);
+         imageBackWin.color = new Color(0f, 0f, 0f, 0f);
     }
 
     
