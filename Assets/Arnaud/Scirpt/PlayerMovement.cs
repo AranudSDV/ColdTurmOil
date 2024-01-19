@@ -23,6 +23,9 @@ public class PlayerMovement : MonoBehaviour
     public GameObject SonOutside;
     public GameObject SonTuto;
     public GameObject SonMine;
+
+
+    
     
     
 
@@ -49,15 +52,23 @@ public class PlayerMovement : MonoBehaviour
     public LayerMask postit2;
     public LayerMask postit3;
     public LayerMask postit4;
+
+
   
 
     public Transform groundCheck;
     public float groundDistance = 0.1f ;
+    public float LocationDistance = 20f ;
 
     public LayerMask groundMaskSteel;
     public LayerMask groundMaskSnow;
     public LayerMask groundMaskConcrete;
     public LayerMask groundMaskCarpet;
+
+
+    public string tagMineName;
+    public string tagTutoName;
+    public string tagExterieurName;
     
 
     public bool IsWalking = false;
@@ -96,6 +107,8 @@ public class PlayerMovement : MonoBehaviour
     public PorteForage porteForage;
 
     
+
+    
     
     private void Start()
     {
@@ -109,12 +122,30 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
 
+        RaycastHit hitTag;
+        
+
        //UpdateSound();
+       
 
         isGroundedSteel = Physics.CheckSphere(groundCheck.position, groundDistance, groundMaskSteel);
         isGroundedSnow = Physics.CheckSphere(groundCheck.position, groundDistance, groundMaskSnow);
         isGroundedConcrete = Physics.CheckSphere(groundCheck.position, groundDistance, groundMaskConcrete);
         isGroundedCarpet = Physics.CheckSphere(groundCheck.position, groundDistance, groundMaskCarpet);
+
+        //isOnMine = Physics.CheckSphere(groundCheck.position, LocationDistance, tagMineName);
+
+        //if (Physics.Raycast(icamera.transform.position, icamera.transform.TransformDirection(Vector3.forward), out hit, rangePickUp, LecteurBoutton))
+
+
+        /*if (Physics.Raycast(groundCheck.transform.position, transform.TransformDirection(Vector3.down), out HitTag, LocationDistance, tagMineName))
+
+        if(Physics.Raycast (groundCheck.position, down, LocationDistance) && hitTag.transform.gameObject.tag == "Exterieur")
+        {
+            Debug.Log("RAYCAST PLAYERMOUVE FOR SONAMBIANCE TAGMINE");
+        }
+        */
+
 
         if(isGroundedSnow)
         {
@@ -226,9 +257,9 @@ public class PlayerMovement : MonoBehaviour
         
 
         
-        
-
         RaycastHit hit;
+
+        
         
 
         if (Physics.Raycast(icamera.transform.position, icamera.transform.TransformDirection(Vector3.forward), out hit, rangePickUp, itemMask))
