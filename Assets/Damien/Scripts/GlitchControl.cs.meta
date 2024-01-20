@@ -4,7 +4,8 @@ MonoImporter:
   externalObjects: {}
   serializedVersion: 2
   defaultReferences:
-  - mat: {instanceID: 0}
+  - mat: {fileID: 2100000, guid: 7f1e21c736e00e14dbe0fd52aa0955c4, type: 2}
+  - Fusible: {instanceID: 0}
   - feature: {fileID: 6695684189784197932, guid: c40be3174f62c4acf8c1216858c64956,
       type: 2}
   executionOrder: 0

@@ -17,7 +17,7 @@ public class SwitchSnow : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-      if(Inventory.instance.HasObject("Fusible") == true)
+      if(Inventory.instance.HasObject("Manivelle") == true)
      {
         FX_Blizzard.SetActive(true);
         FX_SnowFall.SetActive(false);
