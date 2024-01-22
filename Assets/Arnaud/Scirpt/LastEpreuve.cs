@@ -21,6 +21,7 @@ public class LastEpreuve : MonoBehaviour
     public Renderer rend;
     public GameObject time;
     public GameObject sound;
+    public GameObject monster;
 
 
     
@@ -69,6 +70,7 @@ public class LastEpreuve : MonoBehaviour
             {
                 AudioManager.instance.PlayOneShot(FMODEvent.instance.OpenDoorSound, porte.transform.position);
                 sound.SetActive(true);
+                monster.GetComponent<TunelMonster>().MonsterIsMoving = true;
             }
 
             porteIsMoving = true;

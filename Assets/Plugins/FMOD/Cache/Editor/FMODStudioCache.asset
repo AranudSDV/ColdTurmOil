@@ -27,6 +27,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 9500
+--- !u!114 &-8479422929689563553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Tape_Noise
+  m_EditorClassIdentifier: 
+  Path: event:/Tape_Noise
+  Guid:
+    Data1: 1229489598
+    Data2: 1172349520
+    Data3: 1264102579
+    Data4: -404320258
+  Banks:
+  - {fileID: -7073281099961815156}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 4036
 --- !u!114 &-8458282259219267790
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -69,10 +96,10 @@ MonoBehaviour:
   Path: ../../../Desktop/Unearthed_Sound/Unearthed/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638412790597527342
+  lastModified: 638415146638899857
   FileSizes:
   - Name: Desktop
-    Value: 1822
+    Value: 1956
   Exists: 1
 --- !u!114 &-7346868653520789780
 MonoBehaviour:
@@ -116,10 +143,10 @@ MonoBehaviour:
   Path: ../../../Desktop/Unearthed_Sound/Unearthed/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638412790597507343
+  lastModified: 638415146638889871
   FileSizes:
   - Name: Desktop
-    Value: 10452832
+    Value: 10870944
   Exists: 1
 --- !u!114 &-6492761013234813360
 MonoBehaviour:
@@ -149,6 +176,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 29587
+--- !u!114 &-5596124827195644238
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/monster_Music
+  m_EditorClassIdentifier: 
+  Path: event:/monster_Music
+  Guid:
+    Data1: -1926816270
+    Data2: 1077330679
+    Data3: 1292837002
+    Data4: 1401452042
+  Banks:
+  - {fileID: -7073281099961815156}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 24920
 --- !u!114 &-4613802496829378572
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -374,12 +428,15 @@ MonoBehaviour:
   - {fileID: 7224335016238833811}
   - {fileID: -6492761013234813360}
   - {fileID: 4791873906223335606}
+  - {fileID: 5499440356197689567}
+  - {fileID: -8479422929689563553}
+  - {fileID: -5596124827195644238}
   EditorParameters: []
   MasterBanks:
   - {fileID: -7073281099961815156}
   StringsBanks:
   - {fileID: -7840616295487783546}
-  cacheTime: 638412790597527342
+  cacheTime: 638415146638899857
   cacheVersion: 131616
 --- !u!114 &1152617067772578865
 MonoBehaviour:
@@ -571,6 +628,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 12554
+--- !u!114 &5499440356197689567
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Briefing
+  m_EditorClassIdentifier: 
+  Path: event:/Briefing
+  Guid:
+    Data1: 427980628
+    Data2: 1215081777
+    Data3: -934069366
+    Data4: -1310782405
+  Banks:
+  - {fileID: -7073281099961815156}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 6173
 --- !u!114 &5953719966860367062
 MonoBehaviour:
   m_ObjectHideFlags: 0

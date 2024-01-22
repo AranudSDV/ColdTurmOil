@@ -8,7 +8,6 @@ public class trigger : MonoBehaviour
   public GameObject truc;
   public GameObject newPos;
   public GameObject trappe;
-  public GameObject positionMob;
   public GameObject SoundMonster;
     
   public bool objectIsMoving = false;

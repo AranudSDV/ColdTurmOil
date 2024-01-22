@@ -45,8 +45,9 @@ public class PorteForage : MonoBehaviour
     void Update()
     {
         //La plateforme se deplace 
+        
         if (plateformIsMoving == true) 
-        {
+        
         {
             plateform.transform.position = Vector3.MoveTowards(plateform.transform.position, newPos.transform.position, speedUp * Time.deltaTime); 
             rend.enabled = true;
@@ -73,14 +74,14 @@ public class PorteForage : MonoBehaviour
             plateformIsMoving = false; //La plateforme ne se deplace plus
         }
 
-        }
+        
         
 
 
 
 
         if (plateform2IsMoving == true)
-        {
+        
 
         {
             plateform2.transform.position = Vector3.MoveTowards(plateform2.transform.position, newPos2.transform.position, speedUp * Time.deltaTime); 
@@ -100,7 +101,7 @@ public class PorteForage : MonoBehaviour
             plateform2IsMoving = false; 
         }
         
-        }
+        
 
         if(Inventory.instance.HasObject("Manivelle") == true  && rayHit2 == true)
             {

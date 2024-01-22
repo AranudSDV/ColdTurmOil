@@ -10,6 +10,8 @@ TagManager:
   - Mine
   - Exterieur
   - Tuto
+  - Monster2
+  - Fin
   layers:
   - Default
   - TransparentFX

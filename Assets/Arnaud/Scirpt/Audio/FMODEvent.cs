@@ -47,6 +47,10 @@ public class FMODEvent : MonoBehaviour
 
     [field: SerializeField] public EventReference AutodestructionSound { get; private set; }
 
+    [field: Header("Briefing")]
+
+    [field: SerializeField] public EventReference Briefing { get; private set; }
+
 
     private void Awake()
     {

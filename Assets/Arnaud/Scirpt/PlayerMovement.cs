@@ -64,6 +64,11 @@ public class PlayerMovement : MonoBehaviour
     public LayerMask groundMaskSnow;
     public LayerMask groundMaskConcrete;
     public LayerMask groundMaskCarpet;
+
+
+    public string tagMineName;
+    public string tagTutoName;
+    public string tagExterieurName;
     
 
     public bool IsWalking = false;
@@ -118,6 +123,10 @@ public class PlayerMovement : MonoBehaviour
     {
 
         RaycastHit hitTag;
+        
+
+       //UpdateSound();
+       
 
         isGroundedSteel = Physics.CheckSphere(groundCheck.position, groundDistance, groundMaskSteel);
         isGroundedSnow = Physics.CheckSphere(groundCheck.position, groundDistance, groundMaskSnow);
@@ -125,19 +134,22 @@ public class PlayerMovement : MonoBehaviour
         isGroundedCarpet = Physics.CheckSphere(groundCheck.position, groundDistance, groundMaskCarpet);
 
 
+
         if (Physics.Raycast(groundCheck.position, transform.TransformDirection(Vector3.down), out hitTag, LocationDistance))
         {
             if(hitTag.transform.gameObject.tag == "Exterieur")
             {
                 SonOutside.SetActive(true);
-                Debug.Log("RAYCAST PLAYERMOUVE FOR SONAMBIANCE TAGMINE");
             }
             else
             {
                 SonOutside.SetActive(false);
             }
+            
         }
 
+       
+       
         if (Physics.Raycast(groundCheck.position, transform.TransformDirection(Vector3.down), out hitTag, LocationDistance))
         {
             if(hitTag.transform.gameObject.tag == "Tuto")
@@ -150,6 +162,7 @@ public class PlayerMovement : MonoBehaviour
             }
         }
 
+       
         if (Physics.Raycast(groundCheck.position, transform.TransformDirection(Vector3.down), out hitTag, LocationDistance))
         {
             if(hitTag.transform.gameObject.tag == "Mine")
@@ -230,7 +243,7 @@ public class PlayerMovement : MonoBehaviour
         {
             controller.Move(move * crouchSpeed * Time.deltaTime);
             Vector3 scale = gameObject.GetComponent<Collider>().transform.localScale;
-            scale.y *= 0.5f;
+            scale.y = 0.5f;
             gameObject.GetComponent<Collider>().transform.localScale = scale;
         }
 
