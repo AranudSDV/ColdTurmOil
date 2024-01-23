@@ -43,7 +43,7 @@ public class GameManager : MonoBehaviour
         {
             Debug.Log("You win!");
 
-            Card.GetComponent<Yellowcard>().cardisok = true;
+            Card.GetComponent<Yellowcard>().cardIsMoving = true;
             
         }
     }

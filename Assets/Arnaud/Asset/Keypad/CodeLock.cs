@@ -21,6 +21,10 @@ public class CodeLock : MonoBehaviour
     public Image imageBackWin;
     public bool doorIsOpening;
 
+    public GameObject postit1;
+    public GameObject postit2;
+    public GameObject postit3;
+
     
 
     void Start()
@@ -40,6 +44,9 @@ public class CodeLock : MonoBehaviour
         {
             doorIsOpening = true;
             StartCoroutine(WinImage());
+            postit1.SetActive(false);
+            postit2.SetActive(false);
+            postit3.SetActive(false);
         }
 
         if(attemptedCode != code)

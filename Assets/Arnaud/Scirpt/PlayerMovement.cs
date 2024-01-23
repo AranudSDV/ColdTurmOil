@@ -13,7 +13,9 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     //float footstepSpeed = 0.3f;
     
+    
     private CURRENT_TERRAIN currentTerrain;
+    private CURRENT_TERRAIN previousTerrain;
     private FMOD.Studio.EventInstance Footsteps;
     private FMOD.Studio.EventInstance AmbiantEnviro;
     public GameObject player;
@@ -52,6 +54,10 @@ public class PlayerMovement : MonoBehaviour
     public LayerMask postit2;
     public LayerMask postit3;
     public LayerMask postit4;
+    public LayerMask lore;
+
+    public GameObject Lore;
+    private bool Loreb = false;
 
 
   
@@ -103,8 +109,16 @@ public class PlayerMovement : MonoBehaviour
     public TextMeshProUGUI TextePostit3;
     public TextMeshProUGUI TextePostit4;
 
+    
+
+
     public Door door;
     public PorteForage porteForage;
+
+    public GameObject Postit1;
+    public GameObject Postit2;
+    public GameObject Postit3;
+
 
     
 
@@ -381,7 +395,12 @@ public class PlayerMovement : MonoBehaviour
 
         if (Physics.Raycast(icamera.transform.position, icamera.transform.TransformDirection(Vector3.forward), out hit, rangePickUp, postit))
         {
-            TextePostit.text = "Le premier chiffre du code est 3"; 
+            TextePostit.text = "Clique gauche pour recupérer morceau du code";
+            if(Input.GetMouseButtonDown(0))
+            {
+             Postit1.SetActive(true);
+            }
+           
         }
         else
         {
@@ -390,20 +409,31 @@ public class PlayerMovement : MonoBehaviour
 
         if (Physics.Raycast(icamera.transform.position, icamera.transform.TransformDirection(Vector3.forward), out hit, rangePickUp, postit2))
         {
-            TextePostit2.text = "Le Deuxieme chiffre du code est 6"; 
+            TextePostit2.text = "Clique gauche pour recupérer morceau du code";
+            if(Input.GetMouseButtonDown(0))
+            {
+             Postit2.SetActive(true);
+            } 
         }
         else
         {
             TextePostit2.text = "";
 
-        }if (Physics.Raycast(icamera.transform.position, icamera.transform.TransformDirection(Vector3.forward), out hit, rangePickUp, postit3))
+        }
+        
+        if (Physics.Raycast(icamera.transform.position, icamera.transform.TransformDirection(Vector3.forward), out hit, rangePickUp, postit3))
         {
-            TextePostit3.text = "Le Troisieme chiffre du code est 9"; 
+            TextePostit3.text = "Clique gauche pour recupérer morceau du code";
+            if(Input.GetMouseButtonDown(0))
+            {
+             Postit3.SetActive(true);
+            } 
         }
         else
         {
             TextePostit3.text = "";
         }
+
 
         if (Physics.Raycast(icamera.transform.position, icamera.transform.TransformDirection(Vector3.forward), out hit, rangePickUp, postit4))
         {
@@ -412,6 +442,27 @@ public class PlayerMovement : MonoBehaviour
         else
         {
             TextePostit4.text = "";
+        }
+
+        if (Physics.Raycast(icamera.transform.position, icamera.transform.TransformDirection(Vector3.forward), out hit, rangePickUp, lore))
+        {
+            Debug.Log("Raycast LORE");
+            TextePostit3.text = "Clique gauche pour lire";
+
+            if(Input.GetMouseButtonDown(0))
+            {
+             Lore.SetActive(true);
+            } 
+
+            if (Input.GetMouseButtonUp(0))
+            {
+            Lore.SetActive(false);
+            }
+        }
+        else
+        {
+            TextePostit3.text = "";
+            Lore.SetActive(false);
         }
         
 
@@ -431,47 +482,30 @@ public class PlayerMovement : MonoBehaviour
             PLAYBACK_STATE playbackState;
             Footsteps.getPlaybackState(out playbackState);
 
-            //if (timer > footstepSpeed)
-            //{
-                if(playbackState.Equals(PLAYBACK_STATE.STOPPED))
-                {
-                 SelectAndPlayFootsteps();
-                 //SelectAndPlayEnviro();
-                 
-                 
-                }
-                //timer = 0.0f;
-            //}
+            
+             if(playbackState.Equals(PLAYBACK_STATE.STOPPED) || currentTerrain != previousTerrain)
+             {
+                Footsteps.stop(STOP_MODE.ALLOWFADEOUT);
+                SelectAndPlayFootsteps();
+                previousTerrain = currentTerrain;   
+             }
+               
+            
 
-            //timer += Time.deltaTime;
+            
 
         }
         else
         {
             
             Footsteps.stop(STOP_MODE.ALLOWFADEOUT);
-            //AmbiantEnviro.stop(STOP_MODE.ALLOWFADEOUT);
+            
         }
-
-        /*AmbiantEnviro.getPlaybackState(out playbackState);
-
-        if(playbackState.Equals(PLAYBACK_STATE.STOPPED))
-        {      
-            SelectAndPlayEnviro();      
-        }
-       else
-        {
-            AmbiantEnviro.stop(STOP_MODE.ALLOWFADEOUT);
-        }
-        */
-
-
-        
-        
 
 
 
     }
+    
     
 
     private void DetermineTerrain()

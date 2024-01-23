@@ -12,13 +12,13 @@ public class PipeScript : MonoBehaviour
 
     int PossibleRots = 1;
 
-    GameManager gameManager;
+    public GameManager gameManager;
 
     public bool rayHitPipe = false;
 
     void Awake()
     {
-        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+        
 
     }
 

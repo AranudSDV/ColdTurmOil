@@ -12,6 +12,7 @@ TagManager:
   - Tuto
   - Monster2
   - Fin
+  - Monstreu
   layers:
   - Default
   - TransparentFX
@@ -37,7 +38,7 @@ TagManager:
   - Postit2
   - Postit3
   - Postit4
-  - 
+  - Lore
   - 
   - 
   - 
