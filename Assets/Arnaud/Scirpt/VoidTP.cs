@@ -6,26 +6,30 @@ public class VoidTP : MonoBehaviour
 {
   public float ZoneMorte;
   public Collider Monstre;
+  
   bool Teleportation = false;
+  bool Teleportation2 = false;
   public GameObject Deathh;
   public GameObject MonsterDeathh;
   
   
   public GameObject tp;
+  public GameObject tp2;
 
-  /*private void OnTriggerEnter (Collider Monstre)
-    {
-        Teleportation = true;
-        Debug.Log("Monstreboughhhdazazd");
-    }
-    */
+
     private void OnTriggerEnter (Collider colliderHit)
     {
-    if(colliderHit.tag == "Monster")
-    {
-    Teleportation = true;
-    }
+        Debug.Log("JEnadujardin");
+        if(colliderHit.tag == "Monster")
+        {
+         Teleportation = true;
+        }
+        if(colliderHit.tag == "Monster2")
+        {
+         Teleportation2 = true;
+        }
     } 
+    
 
 
     
@@ -41,6 +45,11 @@ public class VoidTP : MonoBehaviour
         {
             
             StartCoroutine(MonsterDeath());
+        }
+        if(Teleportation2 == true)
+        {
+            
+            StartCoroutine(MonsterDeath2());
         }
         
     }
@@ -65,6 +74,18 @@ public class VoidTP : MonoBehaviour
          MonsterDeathh.SetActive(false);
          GetComponent<CharacterController>().enabled = true;
          Teleportation = false;
+         
+    }
+
+     IEnumerator MonsterDeath2()
+    {
+        GetComponent<CharacterController>().enabled = false;
+        transform.position = tp2.transform.position;
+        MonsterDeathh.SetActive(true);
+        yield return new WaitForSeconds(4);
+         MonsterDeathh.SetActive(false);
+         GetComponent<CharacterController>().enabled = true;
+         Teleportation2 = false;
          
     }
 }

@@ -34,6 +34,7 @@ public class AllieNPC : MonoBehaviour
     private bool NPC2HasMoved = false;
 
     public GameObject TexteNpc;
+    public GameObject TexteNpc2;
     
 
     
@@ -115,8 +116,11 @@ public class AllieNPC : MonoBehaviour
     IEnumerator TexteNPC()
     {
         TexteNpc.SetActive(true);
+        yield return new WaitForSeconds(5);
+        Destroy(TexteNpc);
+        TexteNpc2.SetActive(true);
         yield return new WaitForSeconds(6);
-         Destroy(TexteNpc);
+         Destroy(TexteNpc2);
     }
 
     

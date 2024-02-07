@@ -314,7 +314,7 @@ public class PlayerMovement : MonoBehaviour
         if (Physics.Raycast(icamera.transform.position, icamera.transform.TransformDirection(Vector3.forward), out hit, rangePickUp, LecteurMask))
         {
 
-            textPickup.text = "Carte magnetique bleu necessaire";
+            textPickup.text = "Carte magnetique bleue necessaire";
             
             if(Input.GetMouseButtonDown(0))
             {
@@ -365,7 +365,6 @@ public class PlayerMovement : MonoBehaviour
            if(Input.GetMouseButtonDown(0))
            {
              hit.transform.GetComponent<PorteForage>().rayHit2 = true;
-             Debug.Log("Script player porte forage");
            }
 
            else
@@ -395,7 +394,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (Physics.Raycast(icamera.transform.position, icamera.transform.TransformDirection(Vector3.forward), out hit, rangePickUp, postit))
         {
-            TextePostit.text = "Clique gauche pour recupérer morceau du code";
+            TextePostit.text = "Clique gauche pour recuperer morceau du code";
             if(Input.GetMouseButtonDown(0))
             {
              Postit1.SetActive(true);
@@ -409,7 +408,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (Physics.Raycast(icamera.transform.position, icamera.transform.TransformDirection(Vector3.forward), out hit, rangePickUp, postit2))
         {
-            TextePostit2.text = "Clique gauche pour recupérer morceau du code";
+            TextePostit2.text = "Clique gauche pour recuperer morceau du code";
             if(Input.GetMouseButtonDown(0))
             {
              Postit2.SetActive(true);
@@ -423,7 +422,7 @@ public class PlayerMovement : MonoBehaviour
         
         if (Physics.Raycast(icamera.transform.position, icamera.transform.TransformDirection(Vector3.forward), out hit, rangePickUp, postit3))
         {
-            TextePostit3.text = "Clique gauche pour recupérer morceau du code";
+            TextePostit3.text = "Clique gauche pour recuperer morceau du code";
             if(Input.GetMouseButtonDown(0))
             {
              Postit3.SetActive(true);
@@ -437,7 +436,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (Physics.Raycast(icamera.transform.position, icamera.transform.TransformDirection(Vector3.forward), out hit, rangePickUp, postit4))
         {
-            TextePostit4.text = "J'ai laisse 3 postits avec les chiffres qui compose le code dans le stocakge et le laboratoire"; 
+            TextePostit4.text = "J'ai laisse 3 post-its avec les chiffres qui composent le code dans le stockage et le laboratoire."; 
         }
         else
         {
@@ -576,18 +575,6 @@ public class PlayerMovement : MonoBehaviour
         Footsteps.release();
         
     }
- 
-
-    /*private void PlayAmbiantEnviro(int terrain)
-    {
-        AmbiantEnviro = FMODUnity.RuntimeManager.CreateInstance("event:/character/AmbiantEnviro");
-        AmbiantEnviro.setParameterByName("IsBlizzard", terrain);
-        FMODUnity.RuntimeManager.AttachInstanceToGameObject(AmbiantEnviro, transform, false);
-        AmbiantEnviro.start();
-        AmbiantEnviro.release();
-        
-    }
-    */
     
     
 }

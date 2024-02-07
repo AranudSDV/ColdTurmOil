@@ -26,6 +26,8 @@ public class CinematiqueFin : MonoBehaviour
         yield return new WaitForSeconds(5);
         Destroy(FX);
         Canva.SetActive(true);
+        yield return new WaitForSeconds(4);
+        Application.Quit();
 
          
     }

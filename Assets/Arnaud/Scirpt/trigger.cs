@@ -9,6 +9,8 @@ public class trigger : MonoBehaviour
   public GameObject newPos;
   public GameObject trappe;
   public GameObject SoundMonster;
+
+  public GameObject glitch;
     
   public bool objectIsMoving = false;
   public bool playerinzone;
@@ -147,7 +149,11 @@ public class trigger : MonoBehaviour
 
       if ( objectHasMoved3 == true)
       {
+        
         Destroy(truc);
+        glitch.SetActive(false);
+        
+
       }
     }    
      
